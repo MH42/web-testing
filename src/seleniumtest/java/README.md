@@ -16,3 +16,10 @@ Eclipse-Project
 |               +-- <Selenium Tests>
 +--  README.md
 ```
+
+# file overview
+
+<ul>
+<li>LoginMethod - logs in User "admin" with password "admin" </li>
+
+</ul>
