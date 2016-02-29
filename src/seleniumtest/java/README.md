@@ -21,5 +21,6 @@ Eclipse-Project
 
 <ul>
 <li>LoginMethod - logs in User "admin" with password "admin" </li>
-
+<li>BadLoginMethod - Denies unknown User "noadmin" with password "noadmin" access to application.</li>
+<li>Logout - logs an logged in user out. (depends on successful login)</li>
 </ul>
