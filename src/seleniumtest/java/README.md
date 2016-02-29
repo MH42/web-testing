@@ -2,7 +2,7 @@
 This directory is intended to be used as the folder on the Eclipse build path containing all the Selenium tests.
 The directory structure should look like this:
 
-
+```
 Eclipse-Project
 +-- src
 |   +-- main
@@ -15,3 +15,4 @@ Eclipse-Project
 |           +-- <packages>
 |               +-- <Selenium Tests>
 +--  README.md
+```
