@@ -14,3 +14,4 @@ Eclipse-Project
 |       +-- java
 |           +-- <packages>
 |               +-- <Selenium Tests>
++--  README.md
