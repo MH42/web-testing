@@ -1,5 +1,3 @@
-package selenium;
-
 import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
