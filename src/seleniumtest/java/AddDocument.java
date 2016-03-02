@@ -13,13 +13,11 @@ public class AddDocument {
 		 login = new LoginTest();
 		 login.setUp();
 		 login.loginTest();
-		// login.loginTest();
 		 driver = login.driver;
 	 	  }
 
 		@Test
 		public void addDocument() throws Exception {
-			driver.findElement(By.id("isc_4D")).click();
 			driver.findElement(By.id("isc_3W")).click(); // go to Documents
 			driver.findElement(By.id("isc_75")).click(); // click "Add Documents"
 			driver.findElement(By.className("GWTUpld")).click(); // click "Browse"
