@@ -28,10 +28,11 @@ public class Logout {
 	@Test
 	public void logout() throws Exception {
 		driver.findElement(By.name("isc_2Qicon")).click();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.findElement(By.id("isc_7E")).click();
 	}
 	@After
 	public void tearDown(){
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.quit();
 	}
 }
