@@ -34,12 +34,6 @@ public class LoginTest {
 		}
 		@After
 		public void tearDown(){
-//			logout = new Logout();
-//			try {
-//				logout.logout();
-//			} catch (Exception e) {
-//				System.out.println(e);
-//			}
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			driver.quit();
 		}
