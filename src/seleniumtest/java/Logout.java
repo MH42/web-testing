@@ -17,18 +17,13 @@ public class Logout {
 	
 	@Before
 	public void setUp(){
+		
 		driver = new FirefoxDriver();
+		LoginPage login = new LoginPage(driver);
 		baseUrl="http://localhost:8080";
 		username="admin";
 		password="admin";
-		
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.get(baseUrl+"/frontend.jsp");
-		driver.findElement(By.id("isc_V")).clear();
-		driver.findElement(By.id("isc_V")).sendKeys(username);
-	    driver.findElement(By.id("isc_Y")).clear();		//password
-	    driver.findElement(By.id("isc_Y")).sendKeys(password);
-	    driver.findElement(By.id("isc_1M")).click();	//submit
+		login.loginAs(username, password);
 	}
 	@Test
 	public void logout() throws Exception {
