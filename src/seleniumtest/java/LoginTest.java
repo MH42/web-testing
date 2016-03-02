@@ -25,6 +25,13 @@ public class LoginTest {
 			password = "admin";
 			login.loginAs(username, password);
 		}
+		
+		@Test
+		public void failLogin() throws Exception {
+			username = "noAdmin";
+			password = "noAdmin";
+			login.loginAs(username, password);
+		}
 		@After
 		public void tearDown(){
 //			logout = new Logout();

@@ -1,2 +1,17 @@
 
 src/seleniumtest/java/Logout.java
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
+pom.xml
+target/classes/LoginPage.class
+target/classes/LoginTest.class
+target/classes/Logout.class
+target/classes/META-INF/MANIFEST.MF
+target/classes/META-INF/maven/web-testing/web-testing/pom.properties
+target/classes/META-INF/maven/web-testing/web-testing/pom.xml
+target/classes/README.md
+target/classes/TestLogin.class
+target/classes/pageobjects/Login.class
+/target/
