@@ -11,7 +11,7 @@ public class LoginTest {
 	public String username;
 	public String password;
 	public LoginPage login;
-	public Logout logout;
+	public LogoutTest logout;
 	
 	 @Before
 	 public void setUp() throws Exception {
