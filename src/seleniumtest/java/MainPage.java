@@ -15,7 +15,8 @@ public class MainPage {
 	private WebElement logoutButton;
 	private WebElement searchInput;
 	private WebElement searchButton;
-	
+	// FileDropDown Menu Elements
+	private WebElement exitFileDropdown;
 	/**
 	 * Default Mainpage Constructor
 	 * @param driver is the WebDriver to use
@@ -27,13 +28,14 @@ public class MainPage {
 		 * feel free to change
 		*/
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//        this.fileDropdown = driver.findElement(By.xpath("//div[6]/div/div[2]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr/td[1]"));
+       this.fileDropdown = driver.findElement(By.cssSelector("div[eventproxy='isc_ToolStripMenuButton_0'] table tbody tr td table tbody tr td img"));
 //        this.personalDropdown = driver.findElement(By.xpath("//div[3]/div/div[2]/div/div[2]/div/table/tbody/tr/td/table/tbody/tr/td[1]"));
 //        this.toolsDropdown = driver.findElement(By.xpath("//div[3]/div/div[2]/div/div[3]/div/table/tbody/tr/td/table/tbody/tr/td[1]"));
 //        this.helpDropdown = driver.findElement(By.xpath("//div[3]/div/div[2]/div/div[4]/div/table/tbody/tr/td/table/tbody/tr/td[1]"));
         this.logoutButton = driver.findElement(By.xpath("//img[contains(@src,'http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png')]"));
         this.searchInput = driver.findElement(By.name("isc_SearchBox_0"));
         this.searchButton = driver.findElement(By.xpath("//img[contains(@src,'http://localhost:8080/frontend/sc/skins/Simplicity/images/pickers/search_picker.gif')]"));
+//        this.exitFileDropdown = driver.findElements(By.cssSelector("div[eventproxy='isc_Menu_0_body'] div table tbody tr[role='menuitem'] td")).get(1);
         }
 	public boolean isLoaded(){
 		//TODO
@@ -146,6 +148,18 @@ public class MainPage {
 	 */
 	public void setSearchButton(WebElement searchButton) {
 		this.searchButton = searchButton;
+	}
+	/**
+	 * @return the exitFileDropdown
+	 */
+	public WebElement getExitFileDropdown() {
+		return exitFileDropdown;
+	}
+	/**
+	 * @param exitFileDropdown the exitFileDropdown to set
+	 */
+	public void setExitFileDropdown(WebElement exitFileDropdown) {
+		this.exitFileDropdown = exitFileDropdown;
 	}
 	
 }
