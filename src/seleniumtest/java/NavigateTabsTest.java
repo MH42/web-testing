@@ -36,6 +36,7 @@ public class NavigateTabs {
 		driver.quit();
 	}
 
+	// @see https://gist.github.com/puddupakkam/5719148
 	private void clickAt(By by) throws InterruptedException {
 //		Thread.sleep(1500);
 		Actions builder = new Actions(driver);
