@@ -5,16 +5,13 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SearchTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainPage main;
-	public Actions builder;
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
