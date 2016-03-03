@@ -15,3 +15,4 @@ target/classes/README.md
 target/classes/TestLogin.class
 target/classes/pageobjects/Login.class
 /target/
+/bin/

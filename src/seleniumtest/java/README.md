@@ -20,9 +20,17 @@ Eclipse-Project
 # file overview
 
 <ul>
-<li>LoginMethod - logs in User "admin" with password "admin" </li>
-<li>BadLoginMethod - Denies unknown User "noadmin" with password "noadmin" access to application.</li>
+<li>AddDocument - logs in and adds a new Document by uploading the intro.pdf </li>
+<li>DeleteDocument - logs in and deletes the document on top of the list </li>
+<li>LanguageTest - tests, whether the right language is displayed when using ?locale=ID identifier in URL TODO: could be parameterized</li>
+<li>LoginPage - PageObject, that enables loginAs(user,password)</li>
+<li>LoginTest - Tests login with "admin" and "noadmin" TODO: could be parameterized</li>
+<li>MainPage </li>
+<li>NavigateTabsTest</li>
+<li>RememberMeLogin - tests whether Credentials are saved when clicking "Remember Me"</li>
+<li>Search - uses search mask to search for "example" file</li>
 <li>Logout - logs an logged in user out. (depends on successful login)</li>
+<li>SearchTest - </li>
 </ul>
 
 
