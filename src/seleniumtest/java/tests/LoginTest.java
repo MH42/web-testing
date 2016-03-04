@@ -1,3 +1,4 @@
+package tests;
 
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -27,6 +28,15 @@ public class LoginTest {
 			password = "admin";
 			login.loginAs(username, password);
 		}
+		
+//		Could be parameterized
+//		
+//		public void loginTest() throws Exception {
+//			username = "user";
+//			password = "password";
+//			login.loginAs(username, password);
+//		}
+		
 		
 		@Test
 		public void failLogin() throws Exception {

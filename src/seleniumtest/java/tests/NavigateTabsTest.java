@@ -1,4 +1,4 @@
-package com.logicaldoc.gui.frontend.client;
+package tests;
 
 import java.util.concurrent.TimeUnit;
 

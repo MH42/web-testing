@@ -1,3 +1,4 @@
+package tests;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -29,6 +30,13 @@ public class TestRunner {
       
       
    }
-   
+//   Trying to run tests in a runTest("Testname"); schema
+//   public <T extends Result> void runTest(Class<T> run){
+//	      T test = JUnitCore.runClasses(run.class);
+//	      for (Failure failure : test.getFailures()) {
+//	         System.out.println(failure.toString());
+//	      }
+//	      System.out.println(test.wasSuccessful());
+//   }
    
 }  
