@@ -14,8 +14,10 @@ public class LoginPage {
     }
 
     public void loginAs(String username, String password) {
-    	driver.findElement(By.id("isc_V")).sendKeys(username);
+    	driver.findElement(By.id("isc_V")).clear();				//clear fields
+    	driver.findElement(By.id("isc_Y")).clear();
+    	driver.findElement(By.id("isc_V")).sendKeys(username); // input credentials
         driver.findElement(By.id("isc_Y")).sendKeys(password);
-        driver.findElement(By.id("isc_1M")).click();
+        driver.findElement(By.id("isc_1M")).click();			// submit
     }
 }

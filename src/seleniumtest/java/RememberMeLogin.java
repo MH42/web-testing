@@ -1,15 +1,15 @@
-
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import PageObjects.OS;
 
 public class RememberMeLogin {
 	public WebDriver driver;
 	public String baseUrl;
 	private String user = "admin";
-
+	public static OS os;
 
 	@Before
 	public void setUp() throws Exception {
@@ -21,29 +21,26 @@ public class RememberMeLogin {
 		driver.findElement(By.id("isc_Y")).sendKeys(user);
 		driver.findElement(By.id("isc_1F")).click(); // Select "Remember Me" option - the reason why loginAs is not used
 		driver.findElement(By.id("isc_1M")).click();
-
 	}
 
 	@Test
 	public void rememberMeLogin() throws Exception {
-
-			
+		os = new OS();
+		OS_TYPE test = MAC; //TODO
 		
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"w"); 
+		if((os.getOsType()) == "MAC"){
+			driver. findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"w");
+		} else {
+			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"w");
+		}
 		
-		
-		
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"n"); // on none Mac Computers use CONTROL instead of COMMAND
 		driver.get(baseUrl + "/frontend.jsp");
 		driver.findElement(By.id("isc_1M")).click();
-
 	}
-
 
 	@After
 	public void tearDown(){
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.quit();
-
 	}
 }
