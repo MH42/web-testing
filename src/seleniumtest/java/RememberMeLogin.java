@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class RememberMeLogin {
-	public WebDriver driver, driver2;
+	public WebDriver driver;
 	public String baseUrl;
 	private String user = "admin";
 
@@ -27,7 +27,13 @@ public class RememberMeLogin {
 	@Test
 	public void rememberMeLogin() throws Exception {
 
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"t"); // on none Mac Computers use CONTROL instead of COMMAND
+			
+		
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"w"); 
+		
+		
+		
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"n"); // on none Mac Computers use CONTROL instead of COMMAND
 		driver.get(baseUrl + "/frontend.jsp");
 		driver.findElement(By.id("isc_1M")).click();
 

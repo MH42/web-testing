@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import PageObjects.LoginPage;
+import PageObjects.MainPage;
+
 public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;

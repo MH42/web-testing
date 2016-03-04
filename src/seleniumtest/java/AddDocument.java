@@ -4,6 +4,8 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import PageObjects.SwitchTabs;
+
 public class AddDocument {
 	public LoginTest login;
 	public WebDriver driver;
@@ -20,7 +22,8 @@ public class AddDocument {
 	 	  }
 
 		@Test
-		public void addDocument() throws Exception {		 
+		public void addDocument() throws Exception {		
+			
 			driver.findElement(By.id("isc_75")).click(); // click "Add Documents"
 			driver.findElement(By.className("GWTUpld")).click(); // click "Browse"
 		    driver.findElement(By.name("LDOC-04463300797515626")).clear();

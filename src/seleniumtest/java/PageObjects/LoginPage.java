@@ -1,9 +1,10 @@
+package PageObjects;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.*;
 
 public class LoginPage {
 	public String baseUrl;
-    private final WebDriver driver;
+    public WebDriver driver;
  
     public LoginPage(WebDriver driver) {
         this.driver = driver;

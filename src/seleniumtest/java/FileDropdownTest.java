@@ -7,6 +7,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import PageObjects.LoginPage;
+import PageObjects.MainPage;
+
 public class FileDropdownTest {
 	public WebDriver driver;
 	public String baseUrl;

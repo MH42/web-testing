@@ -4,6 +4,8 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import PageObjects.LoginPage;
+
 
 public class LoginTest {
 	public WebDriver driver;
