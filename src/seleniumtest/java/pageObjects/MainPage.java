@@ -1,4 +1,4 @@
-package PageObjects;
+package pageObjects;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package PageObjects;
+package pageObjects;
 
 import java.io.IOException;
 

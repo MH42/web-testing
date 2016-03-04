@@ -1,8 +1,6 @@
-package PageObjects;
+package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class SwitchTabs {
 	public WebDriver driver;
@@ -11,7 +9,6 @@ public class SwitchTabs {
 		if (tab == "Dashboard"){
 			driver.findElement(By.xpath("//div[4]/div/div[1]/div/table/tbody/tr/td")).click();
 		}else if (tab == "Documents"){
-//			driver.findElement(By.id("isc_3W")).click();
 			driver.findElement(By.xpath("//div[4]/div/div[2]/div/table/tbody/tr/td")).click();
 		} else if (tab == "Search"){
 			driver.findElement(By.xpath("//div[4]/div/div[3]/div/table/tbody/tr/td")).click();

@@ -3,7 +3,7 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import PageObjects.OS;
+import pageObjects.OS;
 
 public class RememberMeLogin {
 	public WebDriver driver;

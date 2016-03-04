@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import PageObjects.LoginPage;
-import PageObjects.MainPage;
+import pageObjects.LoginPage;
+import pageObjects.MainPage;
 
 public class SearchTest {
 	public WebDriver driver;

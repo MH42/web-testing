@@ -1,4 +1,3 @@
-
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
@@ -41,5 +40,3 @@ public class LanguageTest {
 		driver.quit();
 	}
 }
-
-

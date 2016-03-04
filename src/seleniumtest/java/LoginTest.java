@@ -4,7 +4,7 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import PageObjects.LoginPage;
+import pageObjects.LoginPage;
 
 
 public class LoginTest {

@@ -2,8 +2,8 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-import PageObjects.AddDocument;
-import PageObjects.SwitchTabs;
+import pageObjects.AddDocument;
+import pageObjects.SwitchTabs;
 
 public class AddDocumentTest {
 	public LoginTest login;
