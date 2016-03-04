@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class AddDocument {
 	public LoginTest login;
 	public WebDriver driver;
+	public SwitchTabs Switch;
 	
 	 @Before
 	 public void setUp() throws Exception {
@@ -14,11 +15,12 @@ public class AddDocument {
 		 login.setUp();
 		 login.loginTest();
 		 driver = login.driver;
+		 Switch = new SwitchTabs();
+		 Switch.switchTabs("Documents");	 
 	 	  }
 
 		@Test
-		public void addDocument() throws Exception {
-			driver.findElement(By.id("isc_3W")).click(); // go to Documents
+		public void addDocument() throws Exception {		 
 			driver.findElement(By.id("isc_75")).click(); // click "Add Documents"
 			driver.findElement(By.className("GWTUpld")).click(); // click "Browse"
 		    driver.findElement(By.name("LDOC-04463300797515626")).clear();
