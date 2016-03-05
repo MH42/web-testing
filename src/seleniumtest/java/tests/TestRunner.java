@@ -3,9 +3,16 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+import pageObjects.CreateUser;
+
 public class TestRunner {
 
-   public static void main(String[] args) {
+   public static void main(String[] args) throws Exception {
+	   //Create User
+	   CreateUser create = new CreateUser();
+	   create.register("userX", "u@v.de", "Sir", "Useful", "password");
+	   
+	   
 	   //Login Test
 	      Result login = JUnitCore.runClasses(LoginTest.class);
 	      for (Failure failure : login.getFailures()) {

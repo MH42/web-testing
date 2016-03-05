@@ -1,7 +1,7 @@
 package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import 
+import tests.LoginTest;
 
 public class CreateUser {
 	public LoginTest login;

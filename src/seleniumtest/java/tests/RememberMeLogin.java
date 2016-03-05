@@ -26,13 +26,12 @@ public class RememberMeLogin {
 
 	@Test
 	public void rememberMeLogin() throws Exception {
-		os = new OS();
-		OS_TYPE test = MAC; //TODO
-		
-		if((os.getOsType()) == "MAC"){
-			driver. findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"w");
+		// Could be improved by using Class OS
+		String os = System.getProperty("os.name").toLowerCase();
+		if(os.contains("mac")){
+			driver. findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"t");
 		} else {
-			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"w");
+			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 		}
 		
 		driver.get(baseUrl + "/frontend.jsp");
