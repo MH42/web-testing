@@ -4,10 +4,15 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 import pageObjects.CreateUser;
+import pageObjects.RecoverLDState;
 
 public class TestRunner {
 
    public static void main(String[] args) throws Exception {
+	   // Reset Logical Doc State
+	   RecoverLDState recover = new RecoverLDState();
+	   recover.main(null);
+	   
 	   //Create User
 	   CreateUser create = new CreateUser();
 	   create.register("userX", "u@v.de", "Sir", "Useful", "password");
