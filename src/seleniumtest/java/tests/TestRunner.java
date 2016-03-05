@@ -14,8 +14,8 @@ public class TestRunner {
 	   recover.main(null);
 	   
 	   //Create User
-	   CreateUser create = new CreateUser();
-	   create.register("userX", "u@v.de", "Sir", "Useful", "password");
+//	   CreateUser create = new CreateUser();
+//	   create.register("userX", "u@v.de", "Sir", "Useful", "password");
 	   
 	   
 	   //Login Test
