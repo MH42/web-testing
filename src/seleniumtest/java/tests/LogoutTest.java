@@ -11,12 +11,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
-import pageObjects.MainPage;
+import pageObjects.MainToolbar;
 
 public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainPage main;
+	public MainToolbar main;
 	
 	@Before
 	public void setUp(){
@@ -29,7 +29,7 @@ public class LogoutTest {
 	public void logout() throws Exception {
 //		WebElement mainBar = driver.findElements(By.className("toolStrip")).get(0);
 //		WebElement logout = driver.findElement(By.xpath("img[@src='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"));
-		main=new MainPage(driver);
+		main=new MainToolbar(driver);
 		main.logout();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.findElement(By.id("isc_7E")).click();

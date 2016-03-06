@@ -9,12 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
-import pageObjects.MainPage;
+import pageObjects.MainToolbar;
 
 public class FileDropdownTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainPage main;
+	public MainToolbar main;
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
@@ -24,7 +24,7 @@ public class FileDropdownTest {
 	}
 	@Test
 	public void openDropdown() throws Exception {
-		main = new MainPage(driver);
+		main = new MainToolbar(driver);
 		main.getFileDropdown().click();
 	}
 //	@Test

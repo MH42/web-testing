@@ -6,7 +6,7 @@ import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MainPage {
+public class MainToolbar {
 	private final WebDriver driver;
 	// MainToolBar Elements	
 	private WebElement fileDropdown;
@@ -22,7 +22,7 @@ public class MainPage {
 	 * Default Mainpage Constructor
 	 * @param driver is the WebDriver to use
 	 */
-	public MainPage(WebDriver driver) {
+	public MainToolbar(WebDriver driver) {
 		this.driver = driver;
 		/*
 		 * using xpath as location strategy is not optimal
