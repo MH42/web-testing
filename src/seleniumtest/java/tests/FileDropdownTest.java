@@ -23,7 +23,7 @@ public class FileDropdownTest {
 		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
 		baseUrl="http://localhost:8080";
-		login.loginAs("admin", "admin");
+		login.loginAdmin();
 	}
 	@Test
 	public void openDropdown() throws Exception {

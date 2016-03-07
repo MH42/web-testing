@@ -19,7 +19,7 @@ public class SearchTest {
 	public void setUp(){
 		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
-		login.loginAs("admin", "admin");
+		login.loginAdmin();
 	}
 	@Test
 	public void searchTest() throws Exception {

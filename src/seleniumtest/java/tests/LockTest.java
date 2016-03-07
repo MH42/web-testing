@@ -15,7 +15,7 @@ import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
 public class LockTest {
-	public LoginTest login;
+	public LoginPage login;
 	public LoginPage loginUser;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
@@ -23,15 +23,13 @@ public class LockTest {
 
 	@Before
 	public void setUp() throws Exception {
-		 login = new LoginTest();
-		 login.setUp();
-		 login.loginTest();
+		 login = new LoginPage(driver);
+		 login.loginAdmin();
 		 driver = login.driver;
 		 switchtabs = new SwitchTabs();
 		 switchtabs.switchTabs("Documents", driver);	
 		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	 	  
-	}
+	 	  }
 
 	@Test
 	public void lockTest() throws Exception {

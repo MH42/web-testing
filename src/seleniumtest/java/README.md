@@ -103,3 +103,18 @@ Eclipse-Project
   </ul>
 <li>search files/folders</li>
 </ul>
+
+# TODOs
+
+<ul>
+<li>Jan: </li>
+<ul>
+<li>File actions </li>
+<li>
+</ul>
+<li>Johannes</li>
+<ul>
+<li>Folder actions </li>
+<li>Main Menu </li>
+</ul>
+</ul>
