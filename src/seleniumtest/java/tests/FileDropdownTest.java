@@ -20,10 +20,9 @@ public class FileDropdownTest {
 	public FileDropDown drop = new FileDropDown();
 	@Before
 	public void setUp(){
-		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
-		baseUrl="http://localhost:8080";
 		login.loginAdmin();
+		this.driver=login.driver;
 	}
 	@Test
 	public void openDropdown() throws Exception {
@@ -33,6 +32,12 @@ public class FileDropdownTest {
 	public void exitDropDown() throws Exception {
 		main.mainMenu("File", driver);
 		drop.click("Exit", driver);		
+	}
+	@Test
+	public void logout() throws Exception {
+		main.mainMenu("File", driver);
+		drop.click("Exit", driver);
+		
 	}
 	@After
 	public void tearDown(){

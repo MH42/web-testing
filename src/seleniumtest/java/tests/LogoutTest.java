@@ -16,14 +16,13 @@ import pageObjects.MainToolbar;
 public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainToolbar main = new MainToolbar();
+	public MainToolbar main;
 	
 	@Before
 	public void setUp(){
-		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
-		baseUrl="http://localhost:8080";
 		login.loginAdmin();
+		main = new MainToolbar();
 	}
 	@Test
 	public void logout() throws Exception {

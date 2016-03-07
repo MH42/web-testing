@@ -14,12 +14,13 @@ import pageObjects.MainToolbar;
 
 public class SearchTest {
 	public WebDriver driver;
-	public MainToolbar main = new MainToolbar();
+	public MainToolbar main;
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();
+		main = new MainToolbar();
 	}
 	@Test
 	public void searchTest() throws Exception {
