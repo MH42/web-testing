@@ -17,6 +17,7 @@ public class FileDropdownTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main = new MainToolbar();
+	public FileDropDown drop = new FileDropDown();
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
@@ -31,6 +32,7 @@ public class FileDropdownTest {
 	@Test
 	public void exitDropDown() throws Exception {
 		main.mainMenu("File", driver);
+		drop.click("Exit", driver);		
 	}
 	@After
 	public void tearDown(){
