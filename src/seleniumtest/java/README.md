@@ -116,6 +116,5 @@ Eclipse-Project
 <ul>
 <li>Folder actions </li>
 <li>Main Menu </li>
-<li>Change Login to use PageObject instead of loginTest</li>
 </ul>
 </ul>

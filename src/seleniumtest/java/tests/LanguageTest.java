@@ -19,10 +19,10 @@ public class LanguageTest {
 
 	}
 
-	public void languageTest(String langCode, String text) throws Exception {
+	public boolean languageTest(String langCode, String text) throws Exception {
 		driver.get(baseUrl + "/frontend.jsp?locale=" + langCode);
 		String testString = driver.findElement(By.className("login-label")).getText();
-		Assert.assertTrue(testString.equals(text));
+		return (testString.equals(text));
 
 	}
 
@@ -30,9 +30,11 @@ public class LanguageTest {
 
 	@Test
 	public void languageTest() throws Exception {
-		languageTest("de", "Anmelden");
-		languageTest("en", "Login"); // TODO needs to be parameterized
-
+		
+		Assert.assertTrue(languageTest("de", "Anmelden"));
+		Assert.assertTrue(languageTest("en", "Login"));
+		Assert.assertFalse(languageTest("de", "Login")); //fails
+		Assert.assertTrue(languageTest("ee", "Login")); //non-existent language Code leads fallback to English
 	}
 
 	@After
