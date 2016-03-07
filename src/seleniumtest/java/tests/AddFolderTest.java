@@ -5,19 +5,19 @@ import org.openqa.selenium.*;
 
 import pageObjects.AddDocument;
 import pageObjects.AddFolder;
+import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
 public class AddFolderTest {
-	public LoginTest login;
+	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
 	public AddFolder add;
 	
 	 @Before
 	 public void setUp() throws Exception {
-		 login = new LoginTest();
-		 login.setUp();
-		 login.loginTest();
+		 login = new LoginPage(driver);
+		 login.loginAdmin();
 		 driver = login.driver;
 		 switchtabs = new SwitchTabs();
 		 switchtabs.switchTabs("Documents", driver);	

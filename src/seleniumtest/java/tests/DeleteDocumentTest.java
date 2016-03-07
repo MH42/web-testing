@@ -6,18 +6,20 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.AddDocument;
+import pageObjects.LoginPage;
+import pageObjects.SwitchTabs;
 
 public class DeleteDocumentTest {
-	public LoginTest login;
+	public LoginPage login;
 	public WebDriver driver;
 	public AddDocument add;
 	
 	 @Before
 	 public void setUp() throws Exception {
-		 login = new LoginTest();
-		 login.setUp();
-		 login.loginTest();
-		 driver = login.driver;
+		 login = new LoginPage(driver);
+		 login.loginAdmin();
+		 driver = login.driver;	
+		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	 	  }
 
 		@Test

@@ -1,15 +1,22 @@
 package pageObjects;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class LoginPage {
 	public String baseUrl;
     public WebDriver driver;
+	public String username;
+	public String password;
  
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
         baseUrl = "http://localhost:8080";
-    	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  		driver = new FirefoxDriver();
+        this.driver = driver;
+    	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(baseUrl + "/frontend.jsp");
     }
 
@@ -19,5 +26,12 @@ public class LoginPage {
     	driver.findElement(By.id("isc_V")).sendKeys(username); // input credentials
         driver.findElement(By.id("isc_Y")).sendKeys(password);
         driver.findElement(By.id("isc_1M")).click();			// submit
+    }
+    
+    public void loginAdmin(){
+    		username = "admin";
+    		password = "admin";
+    		loginAs(username, password);
+
     }
 }
