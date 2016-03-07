@@ -26,7 +26,7 @@ public class LanguageTest {
 
 	}
 
-	// <td class="login-label" valign="center" align="left">Anmelden</td>
+	// Could be parameterized
 
 	@Test
 	public void languageTest() throws Exception {
