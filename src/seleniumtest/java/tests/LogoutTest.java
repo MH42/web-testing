@@ -16,7 +16,7 @@ import pageObjects.MainToolbar;
 public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainToolbar main;
+	public MainToolbar main = new MainToolbar();
 	
 	@Before
 	public void setUp(){
@@ -29,8 +29,7 @@ public class LogoutTest {
 	public void logout() throws Exception {
 //		WebElement mainBar = driver.findElements(By.className("toolStrip")).get(0);
 //		WebElement logout = driver.findElement(By.xpath("img[@src='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"));
-		main=new MainToolbar(driver);
-		main.logout();
+		main.mainMenu("Logout", driver);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.findElement(By.id("isc_7E")).click();
 	}

@@ -14,7 +14,7 @@ import pageObjects.MainToolbar;
 
 public class SearchTest {
 	public WebDriver driver;
-	public MainToolbar main;
+	public MainToolbar main = new MainToolbar();
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
@@ -23,8 +23,7 @@ public class SearchTest {
 	}
 	@Test
 	public void searchTest() throws Exception {
-		main=new MainToolbar(driver);
-		main.search("hello");
+		main.search("hello",driver);
 	}
 	@After
 	public void tearDown(){
