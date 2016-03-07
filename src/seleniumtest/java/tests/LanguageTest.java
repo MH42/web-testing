@@ -30,11 +30,33 @@ public class LanguageTest {
 
 	@Test
 	public void languageTest() throws Exception {
+		Assert.assertFalse(languageTest("de", "Login")); //fails
 		
 		Assert.assertTrue(languageTest("de", "Anmelden"));
 		Assert.assertTrue(languageTest("en", "Login"));
-		Assert.assertFalse(languageTest("de", "Login")); //fails
+		Assert.assertTrue(languageTest("en_US", "Login"));
 		Assert.assertTrue(languageTest("ee", "Login")); //non-existent language Code leads fallback to English
+		Assert.assertTrue(languageTest("it", "Accedi"));
+		Assert.assertTrue(languageTest("fr", "Identifiant"));
+		Assert.assertTrue(languageTest("es", "Ingresar"));
+		Assert.assertTrue(languageTest("pt_BR", "Entrar"));
+		Assert.assertTrue(languageTest("zh_CN", "登录"));
+		Assert.assertTrue(languageTest("hu", "Bejelentkezés"));
+		Assert.assertTrue(languageTest("ru", "Вход"));
+		Assert.assertTrue(languageTest("da", "Logind"));
+		Assert.assertTrue(languageTest("tr", "Oturum Aç"));
+		Assert.assertTrue(languageTest("no", "Logg Inn"));
+		Assert.assertTrue(languageTest("nl", "Aanmelden"));
+		Assert.assertTrue(languageTest("ar", "تسجيل الدخول"));
+		Assert.assertTrue(languageTest("ja", "ログイン"));
+		Assert.assertTrue(languageTest("cs", "Přihlásit se"));
+		Assert.assertTrue(languageTest("sl", "Prijava"));
+		Assert.assertTrue(languageTest("ko", "로그인"));
+		Assert.assertTrue(languageTest("sv", "Logga in"));
+		Assert.assertTrue(languageTest("hr", "Prijava"));
+		Assert.assertTrue(languageTest("vi", "Đăng nhập"));
+		Assert.assertTrue(languageTest("iw", "התחברות"));
+
 	}
 
 	@After
