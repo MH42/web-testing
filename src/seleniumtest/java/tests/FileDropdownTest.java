@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -34,4 +35,8 @@ public class FileDropdownTest {
 //		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 //		main.getExitFileDropdown().click();
 //	}
+	@After
+	public void tearDown(){
+		driver.quit();
+	}
 }
