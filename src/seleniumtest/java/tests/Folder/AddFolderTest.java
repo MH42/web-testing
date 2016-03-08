@@ -19,8 +19,8 @@ public class AddFolderTest {
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
 		 driver = login.driver;
-		 switchtabs = new SwitchTabs();
-		 switchtabs.switchTabs("Documents", driver);	
+		 switchtabs = new SwitchTabs(driver);
+		 switchtabs.switchTabs("Documents");	
 		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	 	  }
 

@@ -14,7 +14,7 @@ public class LoginPage {
  
     public LoginPage(WebDriver driver) {
         baseUrl = "http://localhost:8080";
-  		driver = new FirefoxDriver();
+//  		driver = new FirefoxDriver();
         this.driver = driver;
     	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get(baseUrl + "/frontend.jsp");

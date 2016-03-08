@@ -13,7 +13,7 @@ public class AddDocument {
 		    driver.findElement(By.className("gwt-FileUpload")).clear();
 		    driver.findElement(By.className("gwt-FileUpload")).sendKeys(docPath);
 		   // TODO wait fails at the moment 
-//		    driver.manage().timeouts().implicitlyWait(14, TimeUnit.SECONDS);#
+		    driver.manage().timeouts().implicitlyWait(14, TimeUnit.SECONDS);
 		    Thread.sleep(4000);
 		    driver.findElement(By.xpath("//div[11]/div[2]/div/div/div[3]/table/tbody/tr/td/div")).click(); //send file	
 			driver.findElement(By.id("isc_EJ")).click(); //save file

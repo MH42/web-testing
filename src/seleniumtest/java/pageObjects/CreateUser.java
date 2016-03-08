@@ -15,8 +15,8 @@ public class CreateUser {
 		login.loginTest();
 		// login.loginTest();
 		driver = login.driver;
-		switchTabs = new SwitchTabs();
-		switchTabs.switchTabs("Administration", driver);
+		switchTabs = new SwitchTabs(driver);
+		switchTabs.switchTabs("Administration");
 		driver.findElement(By.id("isc_B6")).click(); //click Security
 		driver.findElement(By.id("isc_BJ")).click(); //click Users
 	//Alternatively try	driver.findElement(By.name("Users")).click(); //click Users
