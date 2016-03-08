@@ -17,30 +17,32 @@ public class DocumentToolbar {
 	public void click(String item) throws Exception{
 		switch (item) {
 		case "Refresh":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/arrow_refresh_small.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/arrow_refresh_small.png']"))
 				.click();
 			break;
 		case "Download":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/download.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/download.png']"))
 				.click();
 			break;
 		case "AddDocument":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/page_white_add.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/page_white_add.png']"))
 			   	.click();
 			break;
 		case "Filter":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/filter.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/filter.png']"))
 			.click();
 		case "Print":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/printer.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/printer.png']"))
 			.click();
 			break;
 		case "List":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/application_view_list.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/application_view_list.png']"))
 			.click();
+			break;
 		case "Gallery":
-			driver.findElement(By.cssSelector("http://localhost:8080/skin/images/application_view_tile.png"))
+			driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/application_view_tile.png']"))
 			.click();
+			break;
 		default:
 			throw new Exception("Command unknown!");
 		}

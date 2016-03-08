@@ -34,7 +34,7 @@ public class MainToolbar {
 				.click();
 		}
 		else if (item == "Logout"){
-			driver.findElement(By.xpath("//img[src='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"))
+			driver.findElement(By.cssSelector("img[src*='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"))
 				.click();
 		}
 		else {
