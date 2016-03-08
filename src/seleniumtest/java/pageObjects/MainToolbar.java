@@ -8,18 +8,36 @@ import org.openqa.selenium.WebElement;
 
 public class MainToolbar {
 	public  WebDriver driver;
-	public void mainMenu(String item, WebDriver driver) throws Exception {
+	
+	public MainToolbar(WebDriver driver){
+		this.driver = driver;
+	}
+	public void click(String item) throws Exception {
 		if (item == "File"){
-			driver.findElement(By.cssSelector("div[eventproxy='isc_ToolStripMenuButton_0'] table tbody tr td table tbody tr td img")).click();
-		}else if (item == "Personal"){
-			driver.findElement(By.cssSelector("div[eventproxy='isc_ToolStripMenuButton_0'] table tbody tr td table tbody tr td img")).click();
-		}else if (item == "Tools"){
-			driver.findElement(By.xpath("")).click();
-		}else if (item == "Help"){
-			driver.findElement(By.xpath("")).click();
-		}else if (item == "Logout"){
-			driver.findElement(By.xpath("//img[contains(@src,'http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png')]")).click();
-		} else {
+			driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_0'] table tbody tr td"))
+				.get(0)
+				.click();
+		}
+		else if (item == "Personal"){
+			driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_1'] table tbody tr td"))
+				.get(0)
+				.click();
+		}
+		else if (item == "Tools"){
+			driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_5'] table tbody tr td"))
+				.get(0)
+				.click();
+		}
+		else if (item == "Help"){
+			driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_3'] table tbody tr td"))
+				.get(0)
+				.click();
+		}
+		else if (item == "Logout"){
+			driver.findElement(By.xpath("//img[src='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"))
+				.click();
+		}
+		else {
 			throw new Exception("Item unknown");
 		}
 	}

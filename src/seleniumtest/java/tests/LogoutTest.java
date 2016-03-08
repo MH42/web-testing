@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pageObjects.ExitPopup;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
 
@@ -17,20 +18,21 @@ public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
+	public ExitPopup exit;
 	
 	@Before
 	public void setUp(){
+		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();
-		main = new MainToolbar();
+		main = new MainToolbar(driver);
+		exit = new ExitPopup(driver);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
 	public void logout() throws Exception {
-//		WebElement mainBar = driver.findElements(By.className("toolStrip")).get(0);
-//		WebElement logout = driver.findElement(By.xpath("img[@src='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"));
-		main.mainMenu("Logout", driver);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		driver.findElement(By.id("isc_7E")).click();
+		main.click("Logout");
+		exit.click("Yes");		
 	}
 	@After
 	public void tearDown(){

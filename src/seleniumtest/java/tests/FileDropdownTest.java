@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pageObjects.ExitPopup;
 import pageObjects.FileDropDown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
@@ -16,27 +17,24 @@ import pageObjects.MainToolbar;
 public class FileDropdownTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainToolbar main = new MainToolbar();
-	public FileDropDown drop = new FileDropDown();
+	public MainToolbar main;
+	public FileDropDown drop;
+	public ExitPopup exit;
 	@Before
 	public void setUp(){
+		driver = new FirefoxDriver();
+		main = new MainToolbar(driver);
+		drop = new FileDropDown(driver);
+		exit = new ExitPopup(driver);
 		LoginPage login = new LoginPage(driver);
-		login.loginAdmin();
-		this.driver=login.driver;
-	}
-	@Test
-	public void openDropdown() throws Exception {
-		main.mainMenu("File", driver);
-	}
-	@Test
-	public void exitDropDown() throws Exception {
-		main.mainMenu("File", driver);
-		drop.click("Exit", driver);		
+		login.loginAdmin();		
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
 	public void logout() throws Exception {
-		main.mainMenu("File", driver);
-		drop.click("Exit", driver);
+		main.click("File");
+		drop.click("Exit");
+		exit.click("No");
 		
 	}
 	@After

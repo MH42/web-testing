@@ -20,7 +20,7 @@ public class SearchTest {
 		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();
-		main = new MainToolbar();
+		main = new MainToolbar(driver);
 	}
 	@Test
 	public void searchTest() throws Exception {
