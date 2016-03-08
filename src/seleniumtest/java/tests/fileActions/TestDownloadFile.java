@@ -2,6 +2,7 @@ package tests.fileActions;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -40,5 +41,8 @@ public class TestDownloadFile {
 	public void testDownload() throws Exception {
 		menu.click("Download");
 	}
-
+	@After
+	public void tearDown(){
+		driver.close();
+	}
 }
