@@ -1,4 +1,6 @@
-package tests;
+package tests.documentToolbar;
+
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,7 +13,7 @@ import pageObjects.DocumentToolbar;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class ListDocumentTest {
+public class TestDownloadDocument {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -29,12 +31,14 @@ public class ListDocumentTest {
 		tabs.switchTabs("Documents");
 	}
 	@Test
-	public void listDocs() throws Exception {
-		toolbar.click("List");
+	public void downloadDoc() throws Exception {
+		driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
+			.get(0)
+			.click();
+		toolbar.click("Download");
 	}
 	@After
 	public void tearDown(){
 		driver.close();
 	}
-
 }
