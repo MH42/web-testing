@@ -1,5 +1,7 @@
 package tests.fileActions;
 
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,15 +31,21 @@ public class TestMarkIndexableFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		file = driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
+		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
+	}
+	
+	@Test
+	public void testMarkUnindex() throws Exception {
+		menu.click("Mark unindexable");
 	}
 	
 	@Test
 	public void testMarkIndex() throws Exception {
 		menu.click("Mark indexable");
 	}
+	
 	@After
 	public void tearDown(){
 		driver.close();

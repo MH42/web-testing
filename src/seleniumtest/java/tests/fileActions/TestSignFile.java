@@ -29,7 +29,7 @@ public class TestSignFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		file = driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
+		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
 	}

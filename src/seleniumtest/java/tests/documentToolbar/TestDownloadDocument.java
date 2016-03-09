@@ -32,7 +32,7 @@ public class TestDownloadDocument {
 	}
 	@Test
 	public void downloadDoc() throws Exception {
-		driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
+		driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 			.get(0)
 			.click();
 		toolbar.click("Download");

@@ -29,8 +29,7 @@ public class TestBookmarkFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		file = driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
-		.get(0);
+		file = driver.findElement(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"));
 		menu.setFile(file);		
 	}
 	
