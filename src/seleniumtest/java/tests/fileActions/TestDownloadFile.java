@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import pageObjects.AddDocument;
 import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
@@ -21,7 +22,10 @@ public class TestDownloadFile {
 	LoginPage login;
 	SwitchTabs tabs;
 	FileContextMenu menu;
+	AddDocument add;
 	WebElement file;
+	String sep = System.getProperty("file.separator");
+	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
 	
 	@Before
 	public void setUp() throws Exception{
@@ -29,9 +33,11 @@ public class TestDownloadFile {
 		login = new LoginPage(driver);
 		tabs = new SwitchTabs(driver);
 		menu = new FileContextMenu(driver);
+		add = new AddDocument();
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
+		add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		

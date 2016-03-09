@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import pageObjects.ExitPopup;
+import pageObjects.ConfirmationPopup;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
 
@@ -18,7 +18,7 @@ public class LogoutTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
-	public ExitPopup exit;
+	public ConfirmationPopup exit;
 	
 	@Before
 	public void setUp(){
@@ -26,7 +26,7 @@ public class LogoutTest {
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();
 		main = new MainToolbar(driver);
-		exit = new ExitPopup(driver);
+		exit = new ConfirmationPopup(driver);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test

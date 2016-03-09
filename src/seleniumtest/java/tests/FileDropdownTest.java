@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import pageObjects.ExitPopup;
+import pageObjects.ConfirmationPopup;
 import pageObjects.FileDropDown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
@@ -19,13 +19,13 @@ public class FileDropdownTest {
 	public String baseUrl;
 	public MainToolbar main;
 	public FileDropDown drop;
-	public ExitPopup exit;
+	public ConfirmationPopup exit;
 	@Before
 	public void setUp(){
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new FileDropDown(driver);
-		exit = new ExitPopup(driver);
+		exit = new ConfirmationPopup(driver);
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

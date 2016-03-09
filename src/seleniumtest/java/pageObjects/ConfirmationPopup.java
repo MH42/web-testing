@@ -3,14 +3,14 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ExitPopup {
+public class ConfirmationPopup {
 	
 	WebDriver driver;
 	
 	/**
 	 * @param driver
 	 */
-	public ExitPopup(WebDriver driver) {
+	public ConfirmationPopup(WebDriver driver) {
 		this.driver = driver;
 	}
 	
