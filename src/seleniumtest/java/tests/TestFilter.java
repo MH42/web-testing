@@ -28,8 +28,11 @@ public class TestFilter {
 
 	 @Test
 	public void testFilter(){
-		driver.findElement(By.xpath("//img[contains(@src, 'http://localhost:8080/skin/images/filter.png')]")).click();
-		driver.findElement(By.id("isc_AZ")).clear();
+		// driver.findElement(By.xpath("//img[contains(@src,'http://localhost:8080/skin/images/filter.png')]")).click();
+		 
+		 driver.findElement(By.id("isc_2T")).click();
+		 
+		 //driver.findElement(By.id("isc_AZ")).clear();
 		driver.findElement(By.id("isc_AZ")).sendKeys("intro");;
 	}
 	
