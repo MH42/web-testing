@@ -25,12 +25,33 @@ Eclipse-Project
 <li>LanguageTest - tests, whether the right language is displayed when using ?locale=ID identifier in URL TODO: could be parameterized</li>
 <li>LoginPage - PageObject, that enables loginAs(user,password)</li>
 <li>LoginTest - Tests login with "admin" and "noadmin" TODO: could be parameterized</li>
-<li>MainPage </li>
+<li>MainToolbar - PageObject containing locators of items in MainToolbar</li>
+<li>ConfirmationPopup - PageObject containing locators of yes and no button in confirmation popup</li>
+<li>DocumentToolbar - Pageobject containing locators of items of DocumentToolbar</li>
+<li>FileContextMenu - Pageobject containing locators of items in ContextMenu of a File</li>
+<li>FileDropDown - Pageobject containing locators of exit in File Dropdown Menu of Maintoolbar</li>
 <li>NavigateTabsTest</li>
 <li>RememberMeLogin - tests whether Credentials are saved when clicking "Remember Me"</li>
-<li>Search - uses search mask to search for "example" file</li>
+<li>TestDownloadDocument - uses document toolbar to select download first file</li>
+<li>TestGalleryDocument - uses document toolbar to open gallery document view</li>
+<li>TestListDocument - uses document toolbar to open list document view</li>
+<li>TestRefreshDocument - uses document toolbar to refresh document view(becomes useful with Selenium Grid)</li>
 <li>Logout - logs an logged in user out. (depends on successful login)</li>
-<li>SearchTest - </li>
+<li>SearchTest - uses search input to search for "hello" example</li>
+<li>TestDownloadFile - uses context menu of first file to open download popup</li>
+<li>TestPreviewFile - uses context menu of first file to open preview popup</li>
+<li>TestCutFile - uses context menu of first file to select cut action</li>
+<li>TestCopyFile - uses context menu of first file to select copy action</li>
+<li>TestDeleteFile - uses context menu of first file to delete file from database</li>
+<li>TestBookmarkFile - uses context menu of first file to bookmark file</li>
+<li>TestSendEmailFile - uses context menu of first file to open Email popup and fills its form</li>
+<li>TestCheckoutFile - uses context menu of first file to checkout file and check it in again</li>
+<li>TestLockFile - uses context menu of first file to lock and unlock file</li>
+<li>TestIndexFile - uses context menu of first file to index it</li>
+<li>TestMarkIndexFile - uses context menu of first file to mark it unidexable and indexable again</li>
+<li>TestImmutableFile - uses context menu of first file to make it immutable</li>
+<li>TestSignFile - uses context menu of first file to sign it</li>
+
 </ul>
 
 
@@ -110,7 +131,7 @@ Eclipse-Project
 <li>Jan: </li>
 <ul>
 <li>File actions </li>
-<li>
+<li>Document Toolbar actions</li>
 </ul>
 <li>Johannes</li>
 <ul>

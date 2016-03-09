@@ -34,7 +34,7 @@ public class TestCopyFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		add.addDocument(dir, driver);
+		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
