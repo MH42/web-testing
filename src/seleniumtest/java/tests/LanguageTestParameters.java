@@ -12,7 +12,7 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class LanguageTestParallel {
+public class LanguageTestParameters {
 	public LoginTest login;
 	public WebDriver driver = new FirefoxDriver();;
 	public String baseUrl = "http://localhost:8080";
