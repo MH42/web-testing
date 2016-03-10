@@ -1,5 +1,7 @@
 package tests.fileActions;
 
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,9 +10,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import junit.framework.Assert;
 import pageObjects.AddDocument;
 import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
+import pageObjects.Statusbar;
 import pageObjects.SwitchTabs;
 
 public class TestCutFile {
@@ -20,6 +24,7 @@ public class TestCutFile {
 	SwitchTabs tabs;
 	AddDocument add;
 	FileContextMenu menu;
+	Statusbar status;
 	WebElement file;
 	String sep = System.getProperty("file.separator");
 	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
@@ -31,6 +36,7 @@ public class TestCutFile {
 		tabs = new SwitchTabs(driver);
 		add = new AddDocument();
 		menu = new FileContextMenu(driver);
+		status = new Statusbar(driver);
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
@@ -42,7 +48,9 @@ public class TestCutFile {
 	
 	@Test
 	public void testCut() throws Exception {
+		assertEquals("0",status.getText("Clipboard"));
 		menu.click("Cut");
+		assertEquals("1", status.getText("Clipboard"));
 	}
 	@After
 	public void tearDown(){

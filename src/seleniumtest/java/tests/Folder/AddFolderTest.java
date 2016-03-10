@@ -2,6 +2,7 @@ package tests.Folder;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.AddDocument;
 import pageObjects.AddFolder;
@@ -16,6 +17,7 @@ public class AddFolderTest {
 	
 	 @Before
 	 public void setUp() throws Exception {
+		 driver = new FirefoxDriver();
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
 		 driver = login.driver;

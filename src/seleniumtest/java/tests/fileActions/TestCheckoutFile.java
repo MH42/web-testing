@@ -15,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import pageObjects.AddDocument;
 import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
+import pageObjects.Statusbar;
 import pageObjects.SwitchTabs;
 
 public class TestCheckoutFile {
@@ -24,6 +25,7 @@ public class TestCheckoutFile {
 	SwitchTabs tabs;
 	AddDocument add;
 	FileContextMenu menu;
+	Statusbar status;
 	WebElement file;
 	Actions action;
 	String sep = System.getProperty("file.separator");
@@ -36,6 +38,7 @@ public class TestCheckoutFile {
 		tabs = new SwitchTabs(driver);
 		add = new AddDocument();
 		menu = new FileContextMenu(driver);
+		status = new Statusbar(driver);
 		action = new Actions(driver);
 		
 		login.loginAdmin();
@@ -48,16 +51,18 @@ public class TestCheckoutFile {
 	
 	@Test
 	public void testCheckout() throws Exception {
+		assertEquals("0", status.getText("Checked"));
 		menu.click("Checkout");
 	}
 	
 	@Test
 	public void testCheckin() throws Exception {
+		assertEquals("1", status.getText("Checked"));
 		menu.click("Checkin");
 		action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
 			.sendKeys("intro.pdf")
 			.sendKeys(Keys.ENTER)
-			.build().perform();
+			.build().perform();		
 	}
 	
 	@After
