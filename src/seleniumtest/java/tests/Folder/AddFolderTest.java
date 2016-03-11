@@ -31,17 +31,11 @@ public class AddFolderTest {
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
 
-		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"))
-				;
-		
-//		folder = driver.findElement(By.cssSelector("img[src *= 'http://localhost:8080/skin/images/cube_blue16.png']"));
-		 
-		
-		
+		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
+
+
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
-
-
 
 	}
 
@@ -49,7 +43,8 @@ public class AddFolderTest {
 	public void addFolder() throws Exception {	
 
 		menu.click("New folder");
-		actions.sendKeys(Keys.RETURN).build().perform();
+		driver.findElement(By.cssSelector("td[onfocus*='isc_SubmitItem']")).click();
+		//actions.sendKeys(Keys.RETURN).build().perform();
 
 
 	}
