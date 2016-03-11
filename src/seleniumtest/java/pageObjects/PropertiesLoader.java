@@ -2,7 +2,6 @@ package pageObjects;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class PropertiesLoader {
 	private static final String MAC_DIR = "path-to-dir";
@@ -18,7 +17,6 @@ public class PropertiesLoader {
 			winDir = properties.getProperty(WIN_DIR);
 		} catch (IOException e) {
 			e.printStackTrace();
-			Logger.getLogger(this.getClass().getName()).warning("Configuration file not found!");
 		}
 	}
 
