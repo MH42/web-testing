@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesLoader {
-	private static final String MAC_DIR = "path-to-dir";
-	private static final String WIN_DIR = "path-to-dir";
+	private static final String MAC_DIR = "macDir";
+	private static final String WIN_DIR = "winDir";
 	private static String macDir, winDir;
 	private static PropertiesLoader propertiesLoader;
 	
