@@ -90,7 +90,7 @@ public class FolderContextMenu {
 			.sendKeys(Keys.RETURN).build().perform();
 			break;
 		default:
-			throw new Exception("Unknown Item.");
+			throw new Exception("Sorry, but your too dumb for a correct Request");
 		}
 	}
 

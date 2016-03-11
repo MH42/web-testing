@@ -57,17 +57,21 @@ Eclipse-Project
 
 # ideas for tests
 
+legend:
+:+1: := Test exists and runs without errors (pray to the mighty xpath for his goodwill)
+* := Test exists, but needs to be fixed
+:warning: := To be created
 
 * folder actions
 
   * :+1: New folder
-  * Rename folder
-  * :exclamation: Delete folder
-  * Add bookmark
-  * Move folder
-  * Copy and Paste folder
-  * Copy and Paste folder as alias
-  * Export to ZIP
+  * :warning: Rename folder
+  * Delete folder
+  * :warning: Add bookmark
+  * :warning: Move folder
+  * :warning: Copy and Paste folder
+  * :warning: Copy and Paste folder as alias
+  * :warning: Export to ZIP
 
 * file actions
 
@@ -79,48 +83,48 @@ Eclipse-Project
   * Add as bookmark
   * Send by email
   * Checkout
-  * Checkin
+  * :warning: Checkin
   * Lock
-  * Unlock
-  * Change file's language
-  * tag file
-  * Vote file
-  * check different versions
+  * :warning: Unlock
+  * :warning: Change file's language
+  * :warning: tag file
+  * :warning: Vote file
+  * :warning: check different versions
   * More
 
     * Index
     * Mark indexable
     * Mark unindexable
-    * Make immutable
-    * Sign
+    * :warning: Make immutable
+    * :warning: Sign
 
 
 * personal settings
 
-  * Profile
+  * :warning: Profile
   * Change password (and relogin)
   * Signature
   * Private Key
   * Contacts
 
-    * Add Contact
-    * Import Contacts from file
+    * :warning: Add Contact
+    * :warning: Import Contacts from file
 
   * Remove Cookies
 
 
 * tools
 
-  * Dropbox import
-  * Dropbox export
-  * Change Registration
+  * :warning: Dropbox import
+  * :warning: Dropbox export
+  * :warning: Change Registration
 
 * Help
 
   * :exclamation: Open Documentation
   * :exclamation: Report a bug
   * :exclamation: Open Forum
-  * Open and close Credentials
+  * :warning: Open and close Credentials
 
 * search files/folders
 
