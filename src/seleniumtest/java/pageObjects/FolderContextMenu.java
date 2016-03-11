@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+
 public class FolderContextMenu {
 
 	private WebDriver driver;
@@ -28,7 +30,9 @@ public class FolderContextMenu {
 
 	public void click(String item) throws Exception{
 		action = new Actions(driver);
+
 		action.contextClick(folder).build().perform();
+
 
 		switch (item) {
 

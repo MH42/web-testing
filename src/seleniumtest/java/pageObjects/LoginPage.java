@@ -31,7 +31,13 @@ public class LoginPage {
     public void loginAdmin(){
     		username = "admin";
     		password = "admin";
-    		loginAs(username, password);
+    		
+    		try {
+    			loginAs(username, password);
+    			} catch (Exception e)
+    			{
+    				driver.quit();
+    			}
 
     }
 }
