@@ -6,35 +6,39 @@ import pageObjects.OS.OS_TYPE;
 
 public class RecoverLDState {
 
-	
+
 	@Test
-    public void main() {
-    	String tomcatPath = "/LogicalDOC-Community/tomcat";
-    	String FilePath = "/Users/johannesh/Documents";
-        String zipFilePath = FilePath + "/logicaldoc.zip";
-        String delDirectory = FilePath + "/logicaldoc";
-        String destDirectory = FilePath + "/";
-//        String ldDestDirectory = destDirectory + "/logicaldotc";
-        UnzipUtility unzipper = new UnzipUtility();
-        try {
+	public void main() {
 
-            Runtime.getRuntime().exec(tomcatPath + "/bin/shutdown.sh"); // stop tomcat
-        	
-//        	if (OS.getOsType() == OS_TYPE.MAC)
-        	
-        	DeleteDirectory.removeRec(delDirectory);
-            
+		String sep = System.getProperty("file.separator");
+		String FilePath = System.getProperty("user.dir")+sep+"Documents";
 
-//            Runtime.getRuntime().exec("rm -rf " + FilePath + "logicaldoc" ); // delete LD folder
-//            Runtime.getRuntime().exec("cd " + destDirectory );	// move to BackUp
-//            Runtime.getRuntime().exec("mv " + ldDestDirectory + " " + FilePath ); // move BackUp to installation path
-            unzipper.unzip(zipFilePath, destDirectory);
-            
-            Runtime.getRuntime().exec(tomcatPath + "/bin/startup.sh"); // start tomcat again
-        } catch (Exception ex) {
-            // some errors occurred
-            ex.printStackTrace();
-        }
-    }
+		String tomcatPath = "/LogicalDOC-Community/tomcat";
+		String zipFilePath = FilePath + "/logicaldoc.zip";
+		String delDirectory = FilePath + "/logicaldoc";
+		String destDirectory = FilePath + "/";
+		//        String ldDestDirectory = destDirectory + "/logicaldotc";
+		UnzipUtility unzipper = new UnzipUtility();
+		try {
+
+			if (OS.getOsType() == OS_TYPE.MAC || OS.getOsType() == OS_TYPE.LINUX){
+
+				Runtime.getRuntime().exec(tomcatPath + "/bin/shutdown.sh"); // stop tomcat
+				DeleteDirectory.removeRec(delDirectory);
+				unzipper.unzip(zipFilePath, destDirectory);
+				Runtime.getRuntime().exec(tomcatPath + "/bin/startup.sh"); // start tomcat again
+			}
+
+			Runtime.getRuntime().exec(tomcatPath + "/bin/shutdown.bat"); // stop tomcat
+			DeleteDirectory.removeRec(delDirectory);
+			unzipper.unzip(zipFilePath, destDirectory);
+			Runtime.getRuntime().exec(tomcatPath + "/bin/startup.bat"); // start tomcat again
+
+
+		} catch (Exception ex) {
+			// some errors occurred
+			ex.printStackTrace();
+		}
+	}
 
 }

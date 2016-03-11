@@ -3,6 +3,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import pageObjects.AddDocument;
 import pageObjects.AddFolder;
@@ -17,42 +18,48 @@ public class AddFolderTest {
 	public AddFolder add;
 	FolderContextMenu menu;
 	WebElement folder;
-	
-	
-	 @Before
-	 public void setUp() throws Exception {
-		 driver = new FirefoxDriver();
-		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		 login = new LoginPage(driver);
-		 login.loginAdmin();
-		 driver = login.driver;
-		 switchtabs = new SwitchTabs(driver);
-		 switchtabs.switchTabs("Documents");	
-//		 folder = driver.findElements(By.cssSelector("div[eventproxy*='isc_FolderNavigator'] div table tbody tr td div table tbody tr "))
-//				 .get(1);
-		 folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"))
-				 ;
+	Actions actions;
+
+
+	@Before
+	public void setUp() throws Exception {
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		login = new LoginPage(driver);
+		login.loginAdmin();
+		driver = login.driver;
+		switchtabs = new SwitchTabs(driver);
+		switchtabs.switchTabs("Documents");	
+
+		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"))
+				;
 		
-		 menu.setFolder(folder);
+//		folder = driver.findElement(By.cssSelector("img[src *= 'http://localhost:8080/skin/images/cube_blue16.png']"));
 		 
-		 
-		 
-	 	  }
-
-		@Test
-		public void addFolder() throws Exception {	
-			
-			menu.click("New Folder");
-			
-
-		}
+		
+		
+		menu = new FolderContextMenu(driver);
+		menu.setFolder(folder);
 
 
-		@After
-		public void tearDown(){
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.quit();
-		}
+
 	}
-	
+
+	@Test
+	public void addFolder() throws Exception {	
+
+		menu.click("New folder");
+		actions.sendKeys(Keys.RETURN).build().perform();
+
+
+	}
+
+
+	@After
+	public void tearDown(){
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.quit();
+	}
+}
+
 
