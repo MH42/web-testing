@@ -32,7 +32,7 @@ public class ChangePassword {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void logout() throws Exception {
+	public void changePassword() throws Exception {
 		main.click("Personal");
 		drop.click("Change password");
 		driver.findElement(By.id("isc_CT")).sendKeys("password");

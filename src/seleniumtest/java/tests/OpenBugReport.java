@@ -34,7 +34,7 @@ public class OpenBugReport {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void logout() throws Exception {
+	public void openBugReport() throws Exception {
 		main.click("Help");
 		drop.click("Bug Report");
 		try {
