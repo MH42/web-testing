@@ -35,9 +35,9 @@ public class ChangeProfile {
 	public void changeProfile() throws Exception {
 		main.click("Personal");
 		drop.click("Profile");
-		driver.findElement(By.id("isc_AT")).sendKeys("Auf dem Sand");
-		driver.findElement(By.id("isc_AZ")).sendKeys("Tübingen");
-		driver.findElement(By.id("isc_AA")).click(); //Save
+		driver.findElement(By.cssSelector("input[name='address']")).sendKeys("Auf dem Sand");
+		driver.findElement(By.cssSelector("input[name='city']")).sendKeys("Tübingen");
+		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click(); //Save
 
 	}
 	@After

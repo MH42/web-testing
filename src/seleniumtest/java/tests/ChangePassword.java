@@ -35,10 +35,10 @@ public class ChangePassword {
 	public void changePassword() throws Exception {
 		main.click("Personal");
 		drop.click("Change password");
-		driver.findElement(By.id("isc_CT")).sendKeys("password");
-		driver.findElement(By.id("isc_CW")).sendKeys("password");
-		driver.findElement(By.id("isc_CZ")).sendKeys("password");
-		driver.findElement(By.id("isc_CR")).click(); //Save
+		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_6']")).sendKeys("password");
+		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_7']")).sendKeys("password");
+		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_8']")).sendKeys("password");
+		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click(); //Save
 
 	}
 	@After
