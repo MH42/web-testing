@@ -57,9 +57,12 @@ Eclipse-Project
 
 # ideas for tests
 
-legend:
+caption:
+
 :+1: := Test exists and runs without errors (pray to the mighty xpath for his goodwill)
+
 * := Test exists, but needs to be fixed
+
 :warning: := To be created
 
 * folder actions
