@@ -14,14 +14,13 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class LanguageTestParameters {
 	public LoginTest login;
-	public WebDriver driver = new FirefoxDriver();;
+	public WebDriver driver = new FirefoxDriver();
 	public String baseUrl = "http://localhost:8080";
 	
 
 	public String languageTest(String langCode) throws Exception {
 		driver.get(baseUrl + "/frontend.jsp?locale=" + langCode);
 		String testString = driver.findElement(By.className("login-label")).getText();
-		System.out.print(testString);
 		return testString;
 	}
 
