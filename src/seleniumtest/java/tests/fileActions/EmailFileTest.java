@@ -13,7 +13,7 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestBookmarkFile {
+public class EmailFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -35,16 +35,18 @@ public class TestBookmarkFile {
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
 		add.addDocument(dir, driver);
-		file = driver.findElement(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"));
+		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
+		.get(0);
 		menu.setFile(file);		
 	}
 	
 	@Test
-	public void testBookmark() throws Exception {
-		menu.click("Add bookmark");
+	public void testEmail() throws Exception {
+		menu.click("Send by email");
 	}
 	@After
-	public void tearDown(){
+	public void tearDown() throws Exception{
+		menu.click("Delete");
 		driver.close();
 	}
 }

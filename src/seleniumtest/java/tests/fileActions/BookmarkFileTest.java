@@ -13,7 +13,7 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestImmutableFile {
+public class BookmarkFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -34,18 +34,19 @@ public class TestImmutableFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		//add.addDocument(dir, driver);
-		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
-		.get(0);
+		add.addDocument(dir, driver);
+		file = driver.findElement(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"));
 		menu.setFile(file);		
 	}
 	
 	@Test
-	public void testImmutable() throws Exception {
-		menu.click("Mark immutable");
+	public void testBookmark() throws Exception {
+		menu.click("Add bookmark");
 	}
+
 	@After
-	public void tearDown(){
+	public void tearDown() throws Exception{
+		menu.click("Delete");
 		driver.close();
 	}
 }

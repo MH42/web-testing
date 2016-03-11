@@ -14,7 +14,7 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestDeleteFile {
+public class DeleteFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -38,7 +38,7 @@ public class TestDeleteFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		//add.addDocument(dir, driver);
+		add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);
@@ -50,7 +50,8 @@ public class TestDeleteFile {
 		popup.click("Yes");
 	}
 	@After
-	public void tearDown(){
+	public void tearDown() throws Exception{
+		menu.click("Delete");
 		driver.close();
 	}
 }

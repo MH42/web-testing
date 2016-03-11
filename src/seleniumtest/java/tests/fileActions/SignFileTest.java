@@ -1,7 +1,5 @@
 package tests.fileActions;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +13,7 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestMarkIndexableFile {
+public class SignFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -36,24 +34,19 @@ public class TestMarkIndexableFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		//add.addDocument(dir, driver);
+		add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
 	}
 	
 	@Test
-	public void testMarkUnindex() throws Exception {
-		menu.click("Mark unindexable");
+	public void testSign() throws Exception {
+		menu.click("Sign");
 	}
-	
-	@Test
-	public void testMarkIndex() throws Exception {
-		menu.click("Mark indexable");
-	}
-	
 	@After
-	public void tearDown(){
+	public void tearDown() throws Exception{
+		menu.click("Delete");
 		driver.close();
 	}
 }

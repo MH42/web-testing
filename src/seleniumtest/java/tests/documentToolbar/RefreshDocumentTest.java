@@ -1,7 +1,5 @@
 package tests.documentToolbar;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +11,7 @@ import pageObjects.DocumentToolbar;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestDownloadDocument {
+public class RefreshDocumentTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -31,14 +29,12 @@ public class TestDownloadDocument {
 		tabs.switchTabs("Documents");
 	}
 	@Test
-	public void downloadDoc() throws Exception {
-		driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
-			.get(0)
-			.click();
-		toolbar.click("Download");
+	public void refreshDoc() throws Exception {
+		toolbar.click("Refresh");
 	}
 	@After
 	public void tearDown(){
 		driver.close();
 	}
+
 }

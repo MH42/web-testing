@@ -1,8 +1,11 @@
 package tests.documentToolbar;
 
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -10,8 +13,8 @@ import pageObjects.DocumentToolbar;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestGalleryDocument {
-
+public class DownloadDocumentTest {
+	
 	WebDriver driver;
 	LoginPage login;
 	SwitchTabs tabs;
@@ -28,8 +31,11 @@ public class TestGalleryDocument {
 		tabs.switchTabs("Documents");
 	}
 	@Test
-	public void listDocs() throws Exception {
-		toolbar.click("Gallery");
+	public void downloadDoc() throws Exception {
+		driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
+			.get(0)
+			.click();
+		toolbar.click("Download");
 	}
 	@After
 	public void tearDown(){

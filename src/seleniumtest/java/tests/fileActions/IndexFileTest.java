@@ -13,7 +13,7 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestLinkFile {
+public class IndexFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -34,18 +34,19 @@ public class TestLinkFile {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		//add.addDocument(dir, driver);
+		add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
 	}
 	
 	@Test
-	public void testLink() throws Exception {
-		menu.click("Paste as Link");
+	public void testIndex() throws Exception {
+		menu.click("Index");
 	}
 	@After
-	public void tearDown(){
+	public void tearDown() throws Exception{
+		menu.click("Delete");
 		driver.close();
 	}
 }

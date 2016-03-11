@@ -11,7 +11,7 @@ import pageObjects.DocumentToolbar;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestRefreshDocument {
+public class ListDocumentTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -29,8 +29,8 @@ public class TestRefreshDocument {
 		tabs.switchTabs("Documents");
 	}
 	@Test
-	public void refreshDoc() throws Exception {
-		toolbar.click("Refresh");
+	public void listDocs() throws Exception {
+		toolbar.click("List");
 	}
 	@After
 	public void tearDown(){
