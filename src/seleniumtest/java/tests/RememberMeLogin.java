@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.OS;
+import pageObjects.OS.OS_TYPE;
 
 public class RememberMeLogin {
 	public WebDriver driver;
@@ -27,14 +28,16 @@ public class RememberMeLogin {
 	@Test
 	public void rememberMeLogin() throws Exception {
 		// Could be improved by using Class OS
-		String os = System.getProperty("os.name").toLowerCase();
-		if(os.contains("mac")){
+		if (OS.getOsType() == OS_TYPE.MAC){
 			driver. findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"t");
 		} else {
 			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 		}
 		
 		driver.get(baseUrl + "/frontend.jsp");
+		LogoutTest logout = new LogoutTest();
+		logout.logout();
+		
 		driver.findElement(By.id("isc_1M")).click();
 	}
 

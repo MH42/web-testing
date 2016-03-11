@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.AddDocument;
 import pageObjects.AddFolder;
+import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
@@ -14,22 +15,36 @@ public class AddFolderTest {
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
 	public AddFolder add;
+	FolderContextMenu menu;
+	WebElement folder;
+	
 	
 	 @Before
 	 public void setUp() throws Exception {
 		 driver = new FirefoxDriver();
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
 		 driver = login.driver;
 		 switchtabs = new SwitchTabs(driver);
 		 switchtabs.switchTabs("Documents");	
-		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//		 folder = driver.findElements(By.cssSelector("div[eventproxy*='isc_FolderNavigator'] div table tbody tr td div table tbody tr "))
+//				 .get(1);
+		 folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"))
+				 ;
+		
+		 menu.setFolder(folder);
+		 
+		 
+		 
 	 	  }
 
 		@Test
-		public void addFolder() throws Exception {		
-			add = new AddFolder();
-			add.addFolder("Test", driver, true);
+		public void addFolder() throws Exception {	
+			
+			menu.click("New Folder");
+			
+
 		}
 
 
