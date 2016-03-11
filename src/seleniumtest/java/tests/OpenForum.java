@@ -36,7 +36,7 @@ public class OpenForum {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void logout() throws Exception {
+	public void openForum() throws Exception {
 		main.click("Help");
 		drop.click("Forum");
 		try {
