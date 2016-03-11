@@ -67,11 +67,11 @@ legend:
   * :+1: New folder
   * :warning: Rename folder
   * Delete folder
-  * :warning: Add bookmark
+  * Add bookmark
   * :warning: Move folder
   * :warning: Copy and Paste folder
   * :warning: Copy and Paste folder as alias
-  * :warning: Export to ZIP
+  * Export to ZIP
 
 * file actions
 
@@ -124,7 +124,7 @@ legend:
   * :exclamation: Open Documentation
   * :exclamation: Report a bug
   * :exclamation: Open Forum
-  * :warning: Open and close Credentials
+  * :+1: Open and close Credentials
 
 * search files/folders
 
