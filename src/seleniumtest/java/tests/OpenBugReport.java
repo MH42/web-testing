@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
-import pageObjects.FileDropDown;
+import pageObjects.HelpDropdown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
 
@@ -19,7 +19,7 @@ public class OpenBugReport {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
-	public FileDropDown drop;
+	public HelpDropdown drop;
 	public ConfirmationPopup exit;
 	private StringBuffer verificationErrors = new StringBuffer();
 	
@@ -27,7 +27,7 @@ public class OpenBugReport {
 	public void setUp(){
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
-		drop = new FileDropDown(driver);
+		drop = new HelpDropdown(driver);
 		exit = new ConfirmationPopup(driver);
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();		
