@@ -1,7 +1,5 @@
 package tests;
 
-import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -12,48 +10,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
-import pageObjects.HelpDropdown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
+import pageObjects.ToolDropdown;
 
-public class OpenBugReport {
+public class RegistrationTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
-	public HelpDropdown drop;
+	public ToolDropdown drop;
 	public ConfirmationPopup exit;
-	private StringBuffer verificationErrors = new StringBuffer();
-
 	@Before
-	public void setUp() {
+	public void setUp(){
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
-		drop = new HelpDropdown(driver);
+		drop = new ToolDropdown(driver);
 		exit = new ConfirmationPopup(driver);
 		LoginPage login = new LoginPage(driver);
-		login.loginAdmin();
+		login.loginAdmin();		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
-
 	@Test
-	public void openBugReport() throws Exception {
-		main.click("Help");
-		drop.click("Bug Report");
-		try {
-			assertEquals("LogicalDOC", driver.getTitle());
-		} catch (Error e) {
-			verificationErrors.append(e.toString());
-		}
-
+	public void changeProfile() throws Exception {
+		main.click("Tools");
+		drop.click("Registration");
+		driver.findElement(By.cssSelector("input[name='reg_name']")).sendKeys("user");
+		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click();
 	}
-
 	@After
-	public void tearDown() {
+	public void tearDown(){
 		driver.quit();
-		String verificationErrorString = verificationErrors.toString();
-		if (!"".equals(verificationErrorString)) {
-			System.out.println(verificationErrorString);
-			fail(verificationErrorString);
-		}
 	}
 }
