@@ -21,11 +21,13 @@ public class LoginPage {
     }
 
     public void loginAs(String username, String password) {
-    	driver.findElement(By.id("isc_V")).clear();				//clear fields
-    	driver.findElement(By.id("isc_Y")).clear();
-    	driver.findElement(By.id("isc_V")).sendKeys(username); // input credentials
-        driver.findElement(By.id("isc_Y")).sendKeys(password);
-        driver.findElement(By.id("isc_1M")).click();			// submit
+    	WebElement user = driver.findElement(By.cssSelector("input[name='isc_TextItem_0']"));				//clear fields
+    	WebElement pass = driver.findElement(By.cssSelector("input[name='password']"));
+    	WebElement submit = driver.findElement(By.cssSelector("div[eventproxy='isc_Button_0'] table tbody tr td div"));
+    	user.clear();
+    	user.sendKeys(username); // input credentials
+        pass.sendKeys(password);
+        submit.click();			// submit
     }
     
     public void loginAdmin(){
