@@ -2,6 +2,8 @@ package tests.fileActions;
 
 import static org.junit.Assert.*;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,7 +45,7 @@ public class LockFileTest {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		add.addDocument(dir, driver);
+		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
@@ -53,12 +55,15 @@ public class LockFileTest {
 	public void testLock() throws Exception {
 		assertEquals("0",status.getText("Locked"));
 		menu.click("Lock");
-		action.sendKeys(Keys.ENTER).build().perform();
 	}
 	
 	@After
 	public void tearDown() throws Exception{
-		menu.click("Delete");
+		driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
+		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
+				.get(0);
+		menu.setFile(file);
+		menu.click("Unlock");
 		driver.close();
 	}
 	

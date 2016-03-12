@@ -1,41 +1,40 @@
-package tests;
-import static org.junit.Assert.*;
+package tests.tools;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import pageObjects.ConfirmationPopup;
-import pageObjects.FileDropDown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
+import pageObjects.SwitchTabs;
+import pageObjects.ToolDropdown;
 
-public class FileDropdownTest {
+public class ExportDropboxTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public MainToolbar main;
-	public FileDropDown drop;
-	public ConfirmationPopup exit;
+	public SwitchTabs tabs;
+	public ToolDropdown drop;
 	@Before
 	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
-		main = new MainToolbar(driver);
-		drop = new FileDropDown(driver);
-		exit = new ConfirmationPopup(driver);
+		tabs = new SwitchTabs(driver);
+		drop = new ToolDropdown(driver);
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void logout() throws Exception {
-		main.click("File");
-		drop.click("Exit");
-		exit.click("No");
-		
+	public void importFromDropbox() throws Exception {
+		tabs.switchTabs("Documents");
+		driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_7'] table tbody tr td"))
+		.get(0)
+		.click();
+		drop.click("Export to Dropbox");
 	}
 	@After
 	public void tearDown(){

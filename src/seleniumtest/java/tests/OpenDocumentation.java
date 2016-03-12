@@ -25,7 +25,7 @@ public class OpenDocumentation {
 	private StringBuffer verificationErrors = new StringBuffer();
 	
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new HelpDropdown(driver);

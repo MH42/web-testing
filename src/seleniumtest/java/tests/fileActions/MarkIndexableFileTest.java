@@ -36,17 +36,13 @@ public class MarkIndexableFileTest {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		add.addDocument(dir, driver);
+		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
-		menu.setFile(file);		
-	}
-	
-	@Test
-	public void testMarkUnindex() throws Exception {
+		menu.setFile(file);
 		menu.click("Mark unindexable");
 	}
-	
+		
 	@Test
 	public void testMarkIndex() throws Exception {
 		menu.click("Mark indexable");
@@ -54,7 +50,7 @@ public class MarkIndexableFileTest {
 	
 	@After
 	public void tearDown() throws Exception{
-		menu.click("Delete");
+		//menu.click("Delete");
 		driver.close();
 	}
 }

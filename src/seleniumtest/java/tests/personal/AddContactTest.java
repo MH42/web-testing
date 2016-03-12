@@ -1,41 +1,38 @@
-package tests;
+package tests.personal;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
-import pageObjects.ToolDropdown;
+import pageObjects.PersonalDropdown;
 
-public class RegistrationTest {
+public class AddContactTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
-	public ToolDropdown drop;
+	public PersonalDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
-		drop = new ToolDropdown(driver);
+		drop = new PersonalDropdown(driver);
 		exit = new ConfirmationPopup(driver);
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changeProfile() throws Exception {
-		main.click("Tools");
-		drop.click("Registration");
-		driver.findElement(By.cssSelector("input[name='reg_name']")).sendKeys("user");
-		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click();
+	public void addContact() throws Exception {
+		main.click("Personal");
+		drop.click("Contacts");
 	}
 	@After
 	public void tearDown(){

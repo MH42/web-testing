@@ -1,5 +1,4 @@
-package tests;
-import static org.junit.Assert.*;
+package tests.tools;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,34 +10,32 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
-import pageObjects.PersonalDropdown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
+import pageObjects.ToolDropdown;
 
-public class ChangeProfile {
+public class RegistrationTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
-	public PersonalDropdown drop;
+	public ToolDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
-		drop = new PersonalDropdown(driver);
+		drop = new ToolDropdown(driver);
 		exit = new ConfirmationPopup(driver);
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changeProfile() throws Exception {
-		main.click("Personal");
-		drop.click("Profile");
-		driver.findElement(By.cssSelector("input[name='address']")).sendKeys("Auf dem Sand");
-		driver.findElement(By.cssSelector("input[name='city']")).sendKeys("Tübingen");
-		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click(); //Save
-
+	public void registerTest() throws Exception {
+		main.click("Tools");
+		drop.click("Registration");
+		driver.findElement(By.cssSelector("input[name='reg_name']")).sendKeys("user");
+		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click();
 	}
 	@After
 	public void tearDown(){

@@ -9,32 +9,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.AddDocument;
-import pageObjects.ConfirmationPopup;
 import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class DeleteFileTest {
-	
+public class MarkUnindexableFile {
+
 	WebDriver driver;
 	LoginPage login;
 	SwitchTabs tabs;
 	AddDocument add;
 	FileContextMenu menu;
-	ConfirmationPopup popup;
 	WebElement file;
 	String sep = System.getProperty("file.separator");
 	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
 	
 	@Before
 	public void setUp() throws Exception{
-		System.out.println(dir);
 		driver = new FirefoxDriver(); 
 		login = new LoginPage(driver);
 		tabs = new SwitchTabs(driver);
 		add = new AddDocument();
 		menu = new FileContextMenu(driver);
-		popup = new ConfirmationPopup(driver);
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
@@ -43,14 +39,15 @@ public class DeleteFileTest {
 		.get(0);
 		menu.setFile(file);
 	}
-	
+		
 	@Test
-	public void testDelete() throws Exception {
-		//menu.click("Delete");
-		popup.click("Yes");
+	public void testMarkIndex() throws Exception {
+		menu.click("Mark unindexable");
 	}
+	
 	@After
 	public void tearDown() throws Exception{
+		menu.click("Mark indexable");
 		//menu.click("Delete");
 		driver.close();
 	}

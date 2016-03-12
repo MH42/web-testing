@@ -16,7 +16,7 @@ public class SearchTest {
 	public WebDriver driver;
 	public MainToolbar main;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		LoginPage login = new LoginPage(driver);
 		login.loginAdmin();

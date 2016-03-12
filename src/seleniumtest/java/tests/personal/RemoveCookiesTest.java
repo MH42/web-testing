@@ -1,11 +1,10 @@
-package tests;
+package tests.personal;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -14,14 +13,14 @@ import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
 import pageObjects.PersonalDropdown;
 
-public class SignatureTest {
+public class RemoveCookiesTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
 	public PersonalDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new PersonalDropdown(driver);
@@ -31,12 +30,13 @@ public class SignatureTest {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changeProfile() throws Exception {
+	public void removeCookies() throws Exception {
 		main.click("Personal");
-		drop.click("My Signature");
+		drop.click("Remove cookies");
 	}
 	@After
 	public void tearDown(){
 		driver.quit();
 	}
+
 }

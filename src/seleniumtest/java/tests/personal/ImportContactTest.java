@@ -1,28 +1,26 @@
-package tests;
-import static org.junit.Assert.*;
+package tests.personal;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
-import pageObjects.PersonalDropdown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;
+import pageObjects.PersonalDropdown;
 
-public class ChangePassword {
+public class ImportContactTest {
 	public WebDriver driver;
 	public String baseUrl;
 	public MainToolbar main;
 	public PersonalDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new PersonalDropdown(driver);
@@ -32,13 +30,9 @@ public class ChangePassword {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changePassword() throws Exception {
+	public void importContacs() throws Exception {
 		main.click("Personal");
-		drop.click("Change password");
-		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_6']")).sendKeys("password");
-		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_7']")).sendKeys("password");
-		driver.findElement(By.cssSelector("input[onselect*='isc_PasswordItem_8']")).sendKeys("password");
-		driver.findElement(By.cssSelector("td[onfocus*='isc_ButtonItem_']")).click(); //Save
+		drop.click("Contacts");
 	}
 	@After
 	public void tearDown(){
