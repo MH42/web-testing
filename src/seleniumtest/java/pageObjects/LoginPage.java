@@ -20,23 +20,27 @@ public class LoginPage {
         driver.get(baseUrl + "/frontend.jsp");
     }
 
-    public void loginAs(String username, String password) {
+    public void loginAs(String username, String password) throws Exception {
+    	try {
     	driver.findElement(By.id("isc_V")).clear();				//clear fields
     	driver.findElement(By.id("isc_Y")).clear();
     	driver.findElement(By.id("isc_V")).sendKeys(username); // input credentials
         driver.findElement(By.id("isc_Y")).sendKeys(password);
         driver.findElement(By.id("isc_1M")).click();			// submit
+    	} catch (Exception e) {
+    		throw new Exception("User does not exist.");
+    	}
     }
     
-    public void loginAdmin(){
+    public void loginAdmin() throws Exception{
     		username = "admin";
-    		password = "admin";
+    		password = "password";
     		
     		try {
     			loginAs(username, password);
     			} catch (Exception e)
     			{
-    				driver.quit();
+    				throw new Exception("Password musst bei 'password' .");
     			}
 
     }

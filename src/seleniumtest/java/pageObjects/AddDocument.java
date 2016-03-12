@@ -26,14 +26,18 @@ public class AddDocument {
 		// Try one of the selectors below for the "Save" button and pray that god will guide your way
 		
 		
+//		driver.findElement(By.cssSelector("div[eventproxy*='isc_HLayout_'] div div"))
+//					.click();	 //save file 
+		
 		//		    driver.findElement(By.cssSelector("div[eventproxy*='isc_Button_49'] table tbody"))
 		//			.click();	 //save file 
 		//		    driver.findElement(By.cssSelector("html body div#isc_DB.windowBackground div#isc_DK.windowBody div#isc_DL.normal div#isc_DM div#isc_F2.normal div#isc_F3 div#isc_F4 div#isc_F5"))
 		//			.click();
 
-		driver.findElement(By.xpath("/html/body/div[9]/div[2]/div/div/div[2]/div/div[1]/div/table/tbody"))
+		driver.findElement(By.xpath("/html/body/div[9]/div[2]/div/div/div[2]/div/div[1]/div/table/tbody/tr/td"))
 		.click();
 
+//		driver.findElement(By.name("Save")).click();
 		// driver.findElement(By.id("isc_F5")).click();
 	}
 
