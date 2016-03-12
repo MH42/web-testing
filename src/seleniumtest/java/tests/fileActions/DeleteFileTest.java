@@ -46,12 +46,12 @@ public class DeleteFileTest {
 	
 	@Test
 	public void testDelete() throws Exception {
-		menu.click("Delete");
+		//menu.click("Delete");
 		popup.click("Yes");
 	}
 	@After
 	public void tearDown() throws Exception{
-		menu.click("Delete");
+		//menu.click("Delete");
 		driver.close();
 	}
 }

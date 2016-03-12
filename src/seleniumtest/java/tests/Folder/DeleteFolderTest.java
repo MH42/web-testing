@@ -41,7 +41,7 @@ public class DeleteFolderTest {
 	@Test
 	public void deleteFolder() throws Exception {	
 
-		menu.click("Delete");
+		//menu.click("Delete");
 		driver.findElements(By.xpath("//div[contains(@eventproxy,'isc_HistoryPanel')]/div")).get(0).click();;
 
 

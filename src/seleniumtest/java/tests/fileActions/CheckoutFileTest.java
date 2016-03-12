@@ -62,7 +62,7 @@ public class CheckoutFileTest {
 			.sendKeys("intro.pdf")
 			.sendKeys(Keys.ENTER)
 			.build().perform();
-		menu.click("Delete");
+		//menu.click("Delete");
 		driver.close();
 	}
 }

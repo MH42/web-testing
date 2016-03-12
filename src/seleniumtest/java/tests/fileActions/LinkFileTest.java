@@ -46,7 +46,7 @@ public class LinkFileTest {
 	}
 	@After
 	public void tearDown() throws Exception{
-		menu.click("Delete");
+		//menu.click("Delete");
 		driver.close();
 	}
 }

@@ -27,7 +27,8 @@ public class AddDocumentTest {
 		@Test
 		public void addDocument() throws Exception {		
 			add = new AddDocument();
-			add.addDocument("/web-testing/intro.pdf", driver);
+			String sep =System.getProperty("file.seperator");
+			add.addDocument(System.getProperty("user.dir") + sep + "web-testing"+ sep +"intro.pdf", driver);
 		}
 
 
