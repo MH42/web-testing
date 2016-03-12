@@ -9,7 +9,7 @@ import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class DeleteFolderTest {
+public class RenameFolderTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
@@ -30,9 +30,7 @@ public class DeleteFolderTest {
 		switchtabs.switchTabs("Documents");	
 
 		folder = 
-				driver.findElement(By.xpath
-						("div[eventproxy='isc_FolderNavigator']"
-								+ "/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
+				driver.findElement(By.xpath("div[eventproxy='isc_FolderNavigator']/div/table[1]/tbody[2]/tr[1]/td/div/table/tbody/tr/td[3]"));
 
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
@@ -40,12 +38,19 @@ public class DeleteFolderTest {
 	}
 
 	@Test
-	public void deleteFolder() throws Exception {	
-		menu.click("Delete");
+	public void renameFolder() throws Exception {	
 
-		driver.findElements
-		(By.xpath("//div[contains(@eventproxy,'isc_HistoryPanel')]/div"))
-		.get(0).click(); //confirm
+		menu.click("Move");
+
+
+		driver.findElement(By.id("isc_12Yopen_icon_0")).click();
+		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_FolderTree')]"
+				+ "/div/table/tbody/tr[2]/td/div/table/tbody/tr/td[3]")).click();
+
+		driver.findElement(By.id("isc_12X")).click(); //confirm
+
+
+
 	}
 
 

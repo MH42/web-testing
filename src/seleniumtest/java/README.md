@@ -68,12 +68,12 @@ caption:
 * folder actions
 
   * :+1: New folder
-  * :warning: Rename folder
+  * :+1: Reload folders
+  * Rename folder
   * Delete folder
   * Add bookmark
-  * :warning: Move folder
-  * :warning: Copy and Paste folder
-  * :warning: Copy and Paste folder as alias
+  * Move folder
+  * Copy and Paste folder
   * Export to ZIP
 
 * file actions
