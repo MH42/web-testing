@@ -21,7 +21,7 @@ public class SignatureTest {
 	public PersonalDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new PersonalDropdown(driver);
@@ -31,7 +31,7 @@ public class SignatureTest {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changeProfile() throws Exception {
+	public void signatureTest() throws Exception {
 		main.click("Personal");
 		drop.click("My Signature");
 	}

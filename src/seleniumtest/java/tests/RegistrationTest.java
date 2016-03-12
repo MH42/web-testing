@@ -21,7 +21,7 @@ public class RegistrationTest {
 	public ToolDropdown drop;
 	public ConfirmationPopup exit;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		main = new MainToolbar(driver);
 		drop = new ToolDropdown(driver);
@@ -31,7 +31,7 @@ public class RegistrationTest {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 	@Test
-	public void changeProfile() throws Exception {
+	public void registerTest() throws Exception {
 		main.click("Tools");
 		drop.click("Registration");
 		driver.findElement(By.cssSelector("input[name='reg_name']")).sendKeys("user");

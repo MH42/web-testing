@@ -20,7 +20,7 @@ public class ExportDropboxTest {
 	public SwitchTabs tabs;
 	public ToolDropdown drop;
 	@Before
-	public void setUp(){
+	public void setUp() throws Exception{
 		driver = new FirefoxDriver();
 		tabs = new SwitchTabs(driver);
 		drop = new ToolDropdown(driver);
