@@ -43,7 +43,7 @@ public class CheckoutFileTest {
 		
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
-		add.addDocument(dir, driver);
+		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
 		menu.setFile(file);		
@@ -55,18 +55,13 @@ public class CheckoutFileTest {
 		menu.click("Checkout");
 	}
 	
-	@Test
-	public void testCheckin() throws Exception {
-		assertEquals("1", status.getText("Checked"));
+	@After
+	public void tearDown() throws Exception{
 		menu.click("Checkin");
 		action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
 			.sendKeys("intro.pdf")
 			.sendKeys(Keys.ENTER)
-			.build().perform();		
-	}
-	
-	@After
-	public void tearDown() throws Exception{
+			.build().perform();
 		menu.click("Delete");
 		driver.close();
 	}

@@ -1,8 +1,6 @@
 package tests.fileActions;
 
-import static org.junit.Assert.*;
-
-import java.util.concurrent.TimeUnit;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
@@ -20,7 +18,7 @@ import pageObjects.LoginPage;
 import pageObjects.Statusbar;
 import pageObjects.SwitchTabs;
 
-public class LockFileTest {
+public class CheckinFileTest {
 	
 	WebDriver driver;
 	LoginPage login;
@@ -28,8 +26,8 @@ public class LockFileTest {
 	AddDocument add;
 	FileContextMenu menu;
 	Statusbar status;
-	Actions action;
 	WebElement file;
+	Actions action;
 	String sep = System.getProperty("file.separator");
 	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
 	
@@ -48,22 +46,24 @@ public class LockFileTest {
 		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
-		menu.setFile(file);		
+		menu.setFile(file);
+		menu.click("Checkout");
 	}
 	
 	@Test
-	public void testLock() throws Exception {
-		assertEquals("0",status.getText("Locked"));
-		menu.click("Lock");
-		action.sendKeys(Keys.ENTER).build().perform();
+	public void testCheckin() throws Exception {
+		assertEquals("1", status.getText("Checked"));
+		menu.click("Checkin");
+		action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
+			.sendKeys("intro.pdf")
+			.sendKeys(Keys.ENTER)
+			.build().perform();		
 	}
 	
 	@After
 	public void tearDown() throws Exception{
-		driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
-		menu.click("Unlock");
-		action.sendKeys(Keys.ENTER).build().perform();
+		menu.click("Delete");
 		driver.close();
 	}
-	
+
 }

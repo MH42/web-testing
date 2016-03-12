@@ -78,40 +78,40 @@ caption:
 
 * file actions
 
-  * Download
-  * Preview
-  * Cut
-  * Copy
-  * Delete
-  * Add as bookmark
+  * :+1: Download
+  * :+1: Preview
+  * :+1: Cut
+  * :+1: Copy
+  * :+1: Delete
+  * :+1: Add as bookmark
   * Send by email
   * Checkout
-  * :warning: Checkin
+  * Checkin
   * Lock
-  * :warning: Unlock
+  * Unlock
   * :warning: Change file's language
   * :warning: tag file
   * :warning: Vote file
   * :warning: check different versions
   * More
 
-    * Index
+    * :+1: Index
     * Mark indexable
-    * Mark unindexable
-    * :warning: Make immutable
-    * :warning: Sign
+    * :warning: Mark unindexable
+    * Make immutable
+    * Sign
 
 
 * personal settings
 
-  * :warning: Profile
+  * :+1: Profile
   * Change password (and relogin)
   * Signature
   * Private Key
   * Contacts
 
-    * :warning: Add Contact
-    * :warning: Import Contacts from file
+    * Add Contact
+    * Import Contacts from file
 
   * Remove Cookies
 
@@ -120,7 +120,7 @@ caption:
 
   * :warning: Dropbox import
   * :warning: Dropbox export
-  * :warning: Change Registration
+  * :+1: Change Registration
 
 * Help
 
