@@ -4,7 +4,6 @@
 
 <ol>
 <li>Almost all ids change - making location by id very unstable.</li>
-<li>Absolute xpaths don't work on mainToolBar.</li>
 </ol>
 
 ## Possible Solutions:
@@ -14,5 +13,4 @@
 <ul>
 <li>It is also possible to use the path of image for all buttons having images</li>
 </ul>
-<li> none </li>
 </ol>
