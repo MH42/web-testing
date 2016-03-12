@@ -30,15 +30,15 @@ public class LoginPage {
         submit.click();			// submit
     }
     
-    public void loginAdmin(){
+    public void loginAdmin() throws Exception{
     		username = "admin";
-    		password = "admin";
+    		password = "password";
     		
     		try {
     			loginAs(username, password);
     			} catch (Exception e)
     			{
-    				driver.quit();
+    				throw new Exception("Password musst bei 'password' .");
     			}
 
     }
