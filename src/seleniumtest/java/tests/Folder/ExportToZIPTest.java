@@ -1,25 +1,25 @@
 package tests.Folder;
+import static org.junit.Assert.*;
+
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import pageObjects.AddDocument;
-import pageObjects.AddFolder;
 import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class AddFolderTest {
+public class ExportToZIPTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
-	public AddFolder add;
 	FolderContextMenu menu;
 	WebElement folder;
 	Actions actions;
-
+	private StringBuffer verificationErrors = new StringBuffer();
 
 	@Before
 	public void setUp() throws Exception {
@@ -40,20 +40,42 @@ public class AddFolderTest {
 	}
 
 	@Test
-	public void addFolder() throws Exception {	
+	public void exportZIP() throws Exception {	
+		String parentWindow = driver.getWindowHandle();
+		Set<String> handles =  driver.getWindowHandles();
 
-			menu.click("New folder");
-			driver.findElement(By.cssSelector("td[onfocus*='isc_SubmitItem']")).click();
+		menu.click("Export to ZIP");
 
+		   for(String windowHandle  : handles)
+		       {
+		       if(!windowHandle.equals(parentWindow))
+		          {
+		          driver.switchTo().window(windowHandle);
 
+		  		try {
+					assertTrue( driver.getTitle().contains("Opening"));
+				} catch (Error e) {
+					verificationErrors.append(e.toString());
+				}
+		          
+		         driver.close(); //closing child window
+		         driver.switchTo().window(parentWindow); //cntrl to parent window
+		          }
+		       }
+		
+		
 	}
 
 
 	@After
 	public void tearDown(){
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+			System.out.println(verificationErrorString);
+			fail(verificationErrorString);
 		driver.quit();
 	}
 }
-
+}
 

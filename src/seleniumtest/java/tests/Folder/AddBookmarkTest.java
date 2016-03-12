@@ -5,17 +5,14 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import pageObjects.AddDocument;
-import pageObjects.AddFolder;
 import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class AddFolderTest {
+public class AddBookmarkTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
-	public AddFolder add;
 	FolderContextMenu menu;
 	WebElement folder;
 	Actions actions;
@@ -42,10 +39,9 @@ public class AddFolderTest {
 	@Test
 	public void addFolder() throws Exception {	
 
-			menu.click("New folder");
-			driver.findElement(By.cssSelector("td[onfocus*='isc_SubmitItem']")).click();
+		menu.click("Add bookmark");
 
-
+		// possible check: Bookmark existing?
 	}
 
 

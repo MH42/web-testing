@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+
 public class FolderContextMenu {
 
 	private WebDriver driver;
@@ -28,7 +30,9 @@ public class FolderContextMenu {
 
 	public void click(String item) throws Exception{
 		action = new Actions(driver);
+
 		action.contextClick(folder).build().perform();
+
 
 		switch (item) {
 
@@ -90,7 +94,7 @@ public class FolderContextMenu {
 			.sendKeys(Keys.RETURN).build().perform();
 			break;
 		default:
-			throw new Exception("Unknown Item.");
+			throw new Exception("Sorry, but your too dumb for a correct Request");
 		}
 	}
 

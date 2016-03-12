@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class TestFilter {
+public class FilterTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;

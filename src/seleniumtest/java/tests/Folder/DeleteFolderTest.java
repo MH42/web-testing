@@ -4,14 +4,12 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-
-import pageObjects.AddDocument;
 import pageObjects.AddFolder;
 import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class AddFolderTest {
+public class DeleteFolderTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
@@ -31,8 +29,9 @@ public class AddFolderTest {
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
 
-		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
-
+		folder = // driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
+	
+		driver.findElement(By.xpath("div[eventproxy='isc_FolderNavigator']/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
 
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
@@ -40,10 +39,11 @@ public class AddFolderTest {
 	}
 
 	@Test
-	public void addFolder() throws Exception {	
+	public void deleteFolder() throws Exception {	
 
-			menu.click("New folder");
-			driver.findElement(By.cssSelector("td[onfocus*='isc_SubmitItem']")).click();
+		menu.click("Delete");
+		driver.findElements(By.xpath("//div[contains(@eventproxy,'isc_HistoryPanel')]/div")).get(0).click();;
+
 
 
 	}
