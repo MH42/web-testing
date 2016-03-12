@@ -97,7 +97,7 @@ caption:
 
     * :+1: Index
     * Mark indexable
-    * :warning: Mark unindexable
+    * Mark unindexable
     * Make immutable
     * Sign
 
@@ -119,8 +119,8 @@ caption:
 
 * tools
 
-  * :warning: Dropbox import
-  * :warning: Dropbox export
+  * Dropbox import
+  * Dropbox export
   * :+1: Change Registration
 
 * Help

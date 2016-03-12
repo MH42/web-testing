@@ -58,10 +58,6 @@ public class CheckoutFileTest {
 	@After
 	public void tearDown() throws Exception{
 		menu.click("Checkin");
-		action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
-			.sendKeys("intro.pdf")
-			.sendKeys(Keys.ENTER)
-			.build().perform();
 		//menu.click("Delete");
 		driver.close();
 	}

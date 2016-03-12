@@ -13,8 +13,8 @@ import pageObjects.FileContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class ImmutableFileTest {
-	
+public class MarkUnindexableFile {
+
 	WebDriver driver;
 	LoginPage login;
 	SwitchTabs tabs;
@@ -37,16 +37,17 @@ public class ImmutableFileTest {
 		//add.addDocument(dir, driver);
 		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
 		.get(0);
-		menu.setFile(file);		
+		menu.setFile(file);
+	}
+		
+	@Test
+	public void testMarkIndex() throws Exception {
+		menu.click("Mark unindexable");
 	}
 	
-	@Test
-	public void testImmutable() throws Exception {
-		menu.click("Mark immutable");
-	}
 	@After
 	public void tearDown() throws Exception{
-		menu.click("Unlock");
+		menu.click("Mark indexable");
 		//menu.click("Delete");
 		driver.close();
 	}

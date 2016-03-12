@@ -55,14 +55,15 @@ public class LockFileTest {
 	public void testLock() throws Exception {
 		assertEquals("0",status.getText("Locked"));
 		menu.click("Lock");
-		action.sendKeys(Keys.ENTER).build().perform();
 	}
 	
 	@After
 	public void tearDown() throws Exception{
 		driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
+		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
+				.get(0);
+		menu.setFile(file);
 		menu.click("Unlock");
-		action.sendKeys(Keys.ENTER).build().perform();
 		driver.close();
 	}
 	
