@@ -89,9 +89,9 @@ caption:
   * Checkin
   * Lock
   * Unlock
-  * :warning: Change file's language
-  * :warning: tag file
-  * :warning: Vote file
+  * :+1: Change file's language
+  * tag file
+  * :+1: Vote file
   * :warning: check different versions
   * More
 

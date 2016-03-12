@@ -1,7 +1,5 @@
 package tests.fileActions;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +14,7 @@ import pageObjects.AddDocument;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class ChangeLanguageFileTest {
+public class TagFileTest {
 
 	WebDriver driver;
 	LoginPage login;
@@ -44,13 +42,17 @@ public class ChangeLanguageFileTest {
 	
 	@Test
 	public void changeLanguage() throws Exception {
-		driver.findElements(By.cssSelector("div[eventproxy^='isc_HistoryPanel_'] div div form table tbody tr td[class='formCell'] table tbody tr td div")).get(1).click();
-		action.sendKeys(Keys.ARROW_UP).sendKeys(Keys.ENTER).build().perform();
-		driver.findElement(By.className("button")).click();
+		WebElement input = driver.findElement(By.name("newtag"));
+		action.sendKeys(input, "test").sendKeys(Keys.ENTER).build().perform();
+		driver.findElements(By.className("button")).get(3).click();
 	}
 	
 	@After
 	public void tearDown() throws Exception{
+//		driver.findElement(By.cssSelector("div[eventproxy^='isc_MultiComboBoxItem_'] table tbody tr td table tbody tr td")).click();
+//		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_FlowLayout_')]//img[src='http://localhost:8080/frontend/sc/skins/Simplicity/images/headerIcons/close.gif']")).click();
+//		driver.findElements(By.className("button")).get(2).click();
+//		driver.findElements(By.className("button")).get(0).click();
 		//menu.click("Delete");
 		driver.close();
 	}
