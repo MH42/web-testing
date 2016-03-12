@@ -32,16 +32,16 @@ public class LoginPage {
     	}
     }
     
-    public void loginAdmin() throws Exception{
+    public void loginAdmin(){
     		username = "admin";
     		password = "password";
-    		
     		try {
-    			loginAs(username, password);
-    			} catch (Exception e)
-    			{
-    				throw new Exception("Password musst bei 'password' .");
-    			}
+				loginAs(username, password);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 
     }
 }
