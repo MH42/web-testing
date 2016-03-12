@@ -70,7 +70,7 @@ caption:
   * :+1: New folder
   * :warning: Rename folder
   * Delete folder
-  * Add bookmark
+  * :+1: Add bookmark
   * :warning: Move folder
   * :warning: Copy and Paste folder
   * :warning: Copy and Paste folder as alias
@@ -105,10 +105,10 @@ caption:
 * personal settings
 
   * :warning: Profile
-  * Change password (and relogin)
+  * :+1: Change password
   * Signature
-  * Private Key
-  * Contacts
+  * :+1: Private Key
+  * :+1: Contacts
 
     * :warning: Add Contact
     * :warning: Import Contacts from file
@@ -124,12 +124,15 @@ caption:
 
 * Help
 
-  * :exclamation: Open Documentation
-  * :exclamation: Report a bug
-  * :exclamation: Open Forum
+  * Open Documentation
+  * Report a bug
+  * Open Forum
   * :+1: Open and close Credentials
 
 * search files/folders
+* :+1: Login
+* :+1: Logout
+* :+1: Language Test
 
 
 # TODOs
