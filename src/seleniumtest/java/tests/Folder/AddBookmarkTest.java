@@ -37,7 +37,7 @@ public class AddBookmarkTest {
 	}
 
 	@Test
-	public void addFolder() throws Exception {	
+	public void addBookmark() throws Exception {	
 
 		menu.click("Add bookmark");
 

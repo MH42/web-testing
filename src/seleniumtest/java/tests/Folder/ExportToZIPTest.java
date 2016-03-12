@@ -46,22 +46,22 @@ public class ExportToZIPTest {
 
 		menu.click("Export to ZIP");
 
-		   for(String windowHandle  : handles)
-		       {
-		       if(!windowHandle.equals(parentWindow))
-		          {
-		          driver.switchTo().window(windowHandle);
-
-		  		try {
-					assertTrue( driver.getTitle().contains("Opening"));
-				} catch (Error e) {
-					verificationErrors.append(e.toString());
-				}
-		          
-		         driver.close(); //closing child window
-		         driver.switchTo().window(parentWindow); //cntrl to parent window
-		          }
-		       }
+//		   for(String windowHandle  : handles)
+//		       {
+//		       if(!windowHandle.equals(parentWindow))
+//		          {
+//		          driver.switchTo().window(windowHandle);
+//
+//		  		try {
+//					assertTrue( driver.getTitle().contains("Opening"));
+//				} catch (Error e) {
+//					verificationErrors.append(e.toString());
+//				}
+//		          
+//		         driver.close(); //closing child window
+//		         driver.switchTo().window(parentWindow); //cntrl to parent window
+//		          }
+//		       }
 		
 		
 	}
