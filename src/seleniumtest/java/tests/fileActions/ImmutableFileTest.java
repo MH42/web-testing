@@ -41,6 +41,7 @@ public class ImmutableFileTest {
 	@Test
 	public void testImmutable() throws Exception {
 		menu.click("Mark immutable");
+		Thread.sleep(1000);
 	}
 	@After
 	public void tearDown() throws Exception{

@@ -45,6 +45,7 @@ public class MarkUnindexableFile {
 	
 	@After
 	public void tearDown() throws Exception{
+		Thread.sleep(1000);
 		menu.click("Mark indexable");
 		//menu.click("Delete");
 		driver.close();

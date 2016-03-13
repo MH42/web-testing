@@ -87,8 +87,8 @@ caption:
   * Send by email
   * Checkout
   * Checkin
-  * Lock
-  * Unlock
+  * :+1: Lock
+  * :+1: Unlock
   * :+1: Change file's language
   * tag file
   * :+1: Vote file
@@ -96,9 +96,9 @@ caption:
   * More
 
     * :+1: Index
-    * Mark indexable
-    * Mark unindexable
-    * Make immutable
+    * :+1: Mark indexable
+    * :+1: Mark unindexable
+    * :+1: Make immutable
     * Sign
 
 
