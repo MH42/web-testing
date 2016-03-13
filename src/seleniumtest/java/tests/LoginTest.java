@@ -11,10 +11,7 @@ import pageObjects.LoginPage;
 public class LoginTest {
 	public WebDriver driver;
 	public String baseUrl;
-	public String username;
-	public String password;
 	public LoginPage login;
-	public LogoutTest logout;
 
 	@Before
 	public void setUp() throws Exception {
@@ -24,30 +21,14 @@ public class LoginTest {
 
 	@Test
 	public void loginTest() throws Exception {
-		username = "admin";
-		password = "admin";
-		login.loginAs(username, password);
-	}
-
-	//		Could be parameterized
-	//		
-	//		public void loginTest() throws Exception {
-	//			username = "user";
-	//			password = "password";
-	//			login.loginAs(username, password);
-	//		}
-
-
-	@Test
-	public void failLogin() throws Exception {
-		username = "noAdmin";
-		password = "noAdmin";
-		login.loginAs(username, password);
-
-
-
+//		Assert.assertFalse(login.loginAs("noAdmin", "noPassword"));
+		
+		Assert.assertTrue(login.loginAs("admin", "password"));
+		
 
 	}
+
+
 	@After
 	public void tearDown(){
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
