@@ -37,9 +37,7 @@ public class MarkIndexableFileTest {
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
 		//add.addDocument(dir, driver);
-		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
-		.get(0);
-		menu.setFile(file);
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");
 		menu.click("Mark unindexable");
 	}
 		

@@ -36,7 +36,7 @@ public class BookmarkFileTest {
 		tabs.switchTabs("Documents");
 		//add.addDocument(dir, driver);
 		file = driver.findElement(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"));
-		menu.setFile(file);		
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");		
 	}
 	
 	@Test

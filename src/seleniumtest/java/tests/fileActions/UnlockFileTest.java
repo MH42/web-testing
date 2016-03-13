@@ -2,12 +2,10 @@ package tests.fileActions;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,23 +44,21 @@ public class UnlockFileTest {
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
 		//add.addDocument(dir, driver);
-		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
-		.get(0);
-		menu.setFile(file);	
-		assertEquals("0",status.getText("Locked"));
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");	
 		menu.click("Lock");
-		action.sendKeys(Keys.ENTER).build().perform();	
+		action.sendKeys(Keys.ENTER).build().perform();
 	}
 	
 	@Test
 	public void testLock() throws Exception {
-		driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
-		file = driver.findElements(By.cssSelector("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img"))
-				.get(0);
-		menu.setFile(file);
+		Thread.sleep(1000);
+		
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");	
 		menu.click("Unlock");
 		action.sendKeys(Keys.ENTER).build().perform();
-	}
+		Thread.sleep(1000);
+		assertEquals("0",status.getText("Locked"));
+	} 
 	
 	@After
 	public void tearDown() throws Exception{
