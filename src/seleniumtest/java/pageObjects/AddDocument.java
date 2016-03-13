@@ -34,15 +34,11 @@ public class AddDocument {
 		//		    driver.findElement(By.cssSelector("html body div#isc_DB.windowBackground div#isc_DK.windowBody div#isc_DL.normal div#isc_DM div#isc_F2.normal div#isc_F3 div#isc_F4 div#isc_F5"))
 		//			.click();
 
-<<<<<<< HEAD
 //		driver.findElement(By.xpath("/html/body/div[9]/div[2]/div/div/div[2]/div/div[1]/div/table/tbody/tr/td"))
 //		.click();
 //		
 		driver.findElement(By.cssSelector("div[eventproxy^='isc_BulkUpdateDialog_'] div div div div div div table tbody tr td")).click();
-=======
-		driver.findElement(By.cssSelector("div[eventproxy^='isc_BulkUpdateDialog_'] div div div div div div table tbody tr td"))
-		.click();
->>>>>>> origin/master
+
 
 //		driver.findElement(By.name("Save")).click();
 		// driver.findElement(By.id("isc_F5")).click();
