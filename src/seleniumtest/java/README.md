@@ -18,6 +18,7 @@ Eclipse-Project
 ```
 
 # file overview
+## tests
 
 * PageObjects
   * AddDocument - logs in and adds a new Document by uploading the intro.pdf
@@ -119,13 +120,7 @@ Eclipse-Project
   * ImportDropboxTest
   * RegistrationTest
 
-
-
-
-
-
-
-
+## Errors seeded 
 
 # ideas for tests
 
@@ -206,17 +201,3 @@ caption:
 * :+1: Login
 * :+1: Logout
 * :+1: Language Test
-
-
-
-# TODOs
-
-
-* Jan:
-
-* File actions
-* Document Toolbar actions
-
-* Johannes
-
-* Folder actions
