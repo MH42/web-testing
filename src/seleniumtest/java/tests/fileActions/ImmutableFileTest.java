@@ -1,5 +1,7 @@
 package tests.fileActions;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +44,7 @@ public class ImmutableFileTest {
 	public void testImmutable() throws Exception {
 		menu.click("Mark immutable");
 		Thread.sleep(1000);
+		assertNotNull(driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/stop.png']")));
 	}
 	@After
 	public void tearDown() throws Exception{

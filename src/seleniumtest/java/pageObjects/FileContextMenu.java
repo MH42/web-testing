@@ -86,14 +86,16 @@ public class FileContextMenu {
 			.sendKeys(Keys.RETURN).build().perform();
 			action.sendKeys(Keys.RETURN).build().perform();
 			action.sendKeys(Keys.RETURN).build().perform();
+			action.sendKeys(Keys.RETURN).build().perform();
 			break;
 		case "Checkin":
 			action.click(this.getLast(driver.findElements(By.xpath("//div[starts-with(@eventproxy,'isc_ContextMenu_')]/div/table/tbody/tr[10]/td"))))
 			.sendKeys(Keys.RETURN).build().perform();
-			action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
-			.sendKeys("intro.pdf")
+			action.sendKeys(driver.findElement(By.cssSelector("input[name='comment']")),"test").build().perform();
+			action.sendKeys(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")),"intro.pdf")
 			.sendKeys(Keys.ENTER)
 			.build().perform();
+			action.sendKeys(Keys.RETURN).build().perform();
 			break;
 		case "Lock":
 			action
@@ -114,12 +116,12 @@ public class FileContextMenu {
 			break;
 		case "Index":
 			action
-				.click(this.getLast(driver.findElements(By.xpath("//div[starts-with(@eventproxy,'isc_ContextMenu_')]/div/table/tbody/tr[13]/td"))))
+				.click(driver.findElement(By.xpath("//div[starts-with(@eventproxy,'isc_ContextMenu_')]/div/table/tbody/tr[13]/td")))
 				.sendKeys(Keys.RETURN)
 				.build()
 				.perform();
 			action
-				.click(this.getLast(driver.findElements(By.xpath("//div[starts-with(@eventproxy,'isc_Menu_')]//table/tbody/tr[1]/td"))))
+				.click(driver.findElement(By.xpath("//div[starts-with(@eventproxy,'isc_Menu_')]//table/tbody/tr[1]/td")))
 				.sendKeys(Keys.RETURN)
 				.build()
 				.perform();

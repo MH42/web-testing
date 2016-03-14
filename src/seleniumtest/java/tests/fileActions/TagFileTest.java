@@ -49,10 +49,11 @@ public class TagFileTest {
 	
 	@After
 	public void tearDown() throws Exception{
+		Thread.sleep(1000);
 //		driver.findElement(By.cssSelector("div[eventproxy^='isc_MultiComboBoxItem_'] table tbody tr td table tbody tr td")).click();
 //		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_FlowLayout_')]//img[src='http://localhost:8080/frontend/sc/skins/Simplicity/images/headerIcons/close.gif']")).click();
-//		driver.findElements(By.className("button")).get(2).click();
-//		driver.findElements(By.className("button")).get(0).click();
+		driver.findElements(By.className("button")).get(2).click();
+		driver.findElements(By.className("button")).get(0).click();
 		//menu.click("Delete");
 		driver.close();
 	}

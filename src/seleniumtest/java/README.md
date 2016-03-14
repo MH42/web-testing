@@ -84,13 +84,13 @@ caption:
   * :+1: Copy
   * :+1: Delete
   * :+1: Add as bookmark
-  * Send by email
+  * :+1: Send by email
   * Checkout
   * Checkin
   * :+1: Lock
   * :+1: Unlock
   * :+1: Change file's language
-  * tag file
+  * :+1: tag file
   * :+1: Vote file
   * :warning: check different versions
   * More
@@ -114,7 +114,7 @@ caption:
     * Add Contact
     * Import Contacts from file
 
-  * Remove Cookies
+  * :+1: Remove Cookies
 
 
 * tools
