@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.ConfirmationPopup;
-import pageObjects.FileDropDown;
+import pageObjects.FileDropdown;
 import pageObjects.HelpDropdown;
 import pageObjects.LoginPage;
 import pageObjects.MainToolbar;

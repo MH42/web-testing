@@ -12,6 +12,13 @@ public class Statusbar {
 		this.driver = driver;
 	}
 	
+	/**
+	 * Returns an text of an item of Statusbar.
+	 * great for assertion purposes
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public String getText(String element) throws Exception{
 		switch(element){
 			case "Clipboard":

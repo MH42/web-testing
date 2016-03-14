@@ -12,6 +12,12 @@ public class MainToolbar {
 	public MainToolbar(WebDriver driver){
 		this.driver = driver;
 	}
+	/**
+	 * Clicks an item of MainToolbar.
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item) throws Exception {
 		if (item == "File"){
 			driver.findElements(By.cssSelector("td[onfocus*='isc_ToolStripMenuButton_0'] table tbody tr td"))

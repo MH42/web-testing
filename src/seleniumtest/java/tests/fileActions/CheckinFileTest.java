@@ -44,15 +44,15 @@ public class CheckinFileTest {
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
 		//add.addDocument(dir, driver);
-		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");
-		menu.click("Checkout");
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");//locates first file
+		menu.click("Checkout");//clicks checkout in file's contextmenu
 		Thread.sleep(1000);
 	}
 	
 	@Test
 	public void testCheckin() throws Exception {
-		assertEquals("1", status.getText("Checked"));
-		menu.click("Checkin");	
+		assertEquals("1", status.getText("Checked"));//checks status if file has been checked
+		menu.click("Checkin");	//checks file in again
 	}
 	
 	@After

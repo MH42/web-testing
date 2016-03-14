@@ -25,8 +25,6 @@ public class CopyFileTest {
 	FileContextMenu menu;
 	Statusbar status;
 	WebElement file;
-	String sep = System.getProperty("file.separator");
-	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
 	
 	@Before
 	public void setUp() throws Exception{
@@ -40,13 +38,13 @@ public class CopyFileTest {
 		login.loginAdmin();
 		tabs.switchTabs("Documents");
 		//add.addDocument(dir, driver);
-		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");		
+		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");	//locates first document in docList	
 	}
 	
 	@Test
 	public void testCopy() throws Exception {
-		assertEquals("0",status.getText("Clipboard"));
-		menu.click("Copy");
+		assertEquals("0",status.getText("Clipboard")); 
+		menu.click("Copy"); // clicks copy in files contextmenu
 		assertEquals("1",status.getText("Clipboard"));
 	}
 

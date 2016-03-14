@@ -11,7 +11,13 @@ public class HelpDropdown {
 		super();
 		this.driver = driver;
 	}
-	
+	/**
+	 * Clicks an item of Help Dropdown menu in MainToolbar.
+	 * NOTE: Help Button in MainToolbar has to be clicked!
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item) throws Exception{
 		switch(item){
 			case "Documentation":

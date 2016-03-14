@@ -12,6 +12,13 @@ public class ToolDropdown {
 		
 	}
 	
+	/**
+	 * Clicks an item of Tool Dropdown menu in MainToolbar.
+	 * NOTE: Tool Button in MainToolbar has to be clicked!
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item) throws Exception{
 		switch (item) {
 		case "Registration":

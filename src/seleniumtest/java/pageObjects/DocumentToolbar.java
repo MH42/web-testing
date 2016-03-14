@@ -14,6 +14,13 @@ public class DocumentToolbar {
 		this.driver = driver;
 	}
 	
+	/**
+	 * Clicks an item of Document Toolbar in Document Tab.
+	 * NOTE: Document Tab has to be clicked for this method to work!
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item) throws Exception{
 		switch (item) {
 		case "Refresh":

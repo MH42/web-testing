@@ -10,7 +10,13 @@ public class PersonalDropdown {
 	public PersonalDropdown(WebDriver driver){
 		this.driver = driver;
 		}
-	
+	/**
+	 * Clicks an item of Personal Dropdown menu in MainToolbar.
+	 * NOTE: Personal Button in MainToolbar has to be clicked!
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item) throws Exception{
 		switch(item){
 			case "Profile":

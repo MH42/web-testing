@@ -45,8 +45,8 @@ public class ChangeLanguageFileTest {
 	@Test
 	public void changeLanguage() throws Exception {
 		driver.findElements(By.cssSelector("div[eventproxy^='isc_HistoryPanel_'] div div form table tbody tr td[class='formCell'] table tbody tr td div")).get(1).click();
-		action.sendKeys(Keys.ARROW_UP).sendKeys(Keys.ENTER).build().perform();
-		driver.findElement(By.className("button")).click();
+		action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();//selects next language
+		driver.findElement(By.className("button")).click();//submit language change
 	}
 	
 	@After

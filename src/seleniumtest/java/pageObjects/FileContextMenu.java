@@ -38,7 +38,18 @@ public class FileContextMenu {
 		return possibleElements.get(last);
 	}
 	
+	/**
+	 * Clicks an item in contextmenu of file using fileLocator
+	 * NOTE: Document Tab has to be clicked and fileLocator has to be set
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
+	
 	public void click(String item) throws Exception{
+		if(fileLocator== null || fileLocator == ""){
+			throw new Exception("fileLocator has to be set!");
+		}
 		action = new Actions(driver);
 		WebElement file = driver.findElement(By.cssSelector(fileLocator));
 		action.contextClick(file).build().perform();

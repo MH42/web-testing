@@ -37,8 +37,8 @@ public class ExportDropboxTest {
 //		.get(0)
 //		.click();
 		drop.click("Export to Dropbox");
-		driver.findElement(By.cssSelector("input[name='code']")).sendKeys("test");
-		driver.findElement(By.cssSelector("td[onfocus^='isc_SubmitItem']")).click();
+		driver.findElement(By.cssSelector("input[name='code']")).sendKeys("test");//inputs oauth key in form
+		driver.findElement(By.cssSelector("td[onfocus^='isc_SubmitItem']")).click();//submits oauth key
 		WebElement warn = driver.findElement(By.cssSelector("div[eventproxy^='isc_globalWarn_messageLabel'] table tbody tr td"));
 		Thread.sleep(1000);
 		assertEquals("Unable to authorize",warn.getText());

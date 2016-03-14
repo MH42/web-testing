@@ -13,7 +13,13 @@ public class ConfirmationPopup {
 	public ConfirmationPopup(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+	/**
+	 * Clicks an item of Confirmation Popup.
+	 * NOTE: Confirmation Popup must be displayed for this method to work!
+	 * 
+	 * @param item
+	 * @throws Exception
+	 */
 	public void click(String item)throws Exception{
 		if(item == "Yes"){
 			driver.findElements(By.cssSelector("div[eventproxy='isc_Window_0_body'] div div div[role='button'] table tbody tr td div"))

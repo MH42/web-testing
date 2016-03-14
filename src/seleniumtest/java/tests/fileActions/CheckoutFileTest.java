@@ -49,8 +49,8 @@ public class CheckoutFileTest {
 	
 	@Test
 	public void testCheckout() throws Exception {
-		assertEquals("0", status.getText("Checked"));
-		menu.click("Checkout");
+		assertEquals("0", status.getText("Checked"));//checks status if file has been checked
+		menu.click("Checkout");//clicks checkout in files contextmenu
 	}
 	
 	@After
