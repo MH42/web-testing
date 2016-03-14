@@ -76,8 +76,8 @@ Eclipse-Project
   * FilterTest - Filters filelist
   * ImmutableFile - uses context menu of first file to make it immutable
   * IndexFile - uses context menu of first file to index it
-  * LinkFileTest
-  * LockFileTest
+  * LinkFileTest - uses context
+  * LockFileTest - uses contextmenu to lock file
   * MarkIndexableFile - uses context menu of first file to mark it unidexable and indexable again
   * MarkUnindexableFile
   * PreviewFile - uses context menu of first file to open preview popup
@@ -121,6 +121,8 @@ Eclipse-Project
   * RegistrationTest
 
 ## Errors seeded 
+* com.logicaldoc.gui.frontend.client.security.SetPassword - sizevalidator removed
+* com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid - setdocuments if statement removed
 
 # ideas for tests
 
