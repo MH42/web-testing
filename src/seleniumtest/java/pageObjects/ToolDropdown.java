@@ -19,10 +19,20 @@ public class ToolDropdown {
 			break;
 			
 		case "Export to Dropbox":
+			driver.findElements(By.cssSelector("td[onfocus^='isc_ToolStripMenuButton_7'] table tbody tr td"))
+			.get(0)
+			.click();
+			driver.findElement(By.cssSelector("div[eventproxy='isc_Menu_9_body'] div table tbody tr td"))
+			.click();
 			driver.findElements(By.cssSelector("div[eventproxy='isc_Menu_8_body'] div table tbody tr td")).get(1).click();
 			break;
 		
 		case "Import from Dropbox":
+			driver.findElements(By.cssSelector("td[onfocus^='isc_ToolStripMenuButton_7'] table tbody tr td"))
+			.get(0)
+			.click();
+			driver.findElement(By.cssSelector("div[eventproxy='isc_Menu_9_body'] div table tbody tr td"))
+			.click();
 			driver.findElements(By.cssSelector("div[eventproxy='isc_Menu_8_body'] div table tbody tr td")).get(5).click();
 			break;
 			
