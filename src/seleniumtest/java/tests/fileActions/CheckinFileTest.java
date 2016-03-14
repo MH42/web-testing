@@ -46,21 +46,19 @@ public class CheckinFileTest {
 		//add.addDocument(dir, driver);
 		menu.setFileLocator("div[eventproxy*='isc_DocumentsListGrid'] div table tbody tr td div img");
 		menu.click("Checkout");
+		Thread.sleep(1000);
 	}
 	
 	@Test
 	public void testCheckin() throws Exception {
 		assertEquals("1", status.getText("Checked"));
-		menu.click("Checkin");
-		action.click(driver.findElement(By.cssSelector("input[class='gwt-FileUpload']")))
-			.sendKeys("intro.pdf")
-			.sendKeys(Keys.ENTER)
-			.build().perform();		
+		menu.click("Checkin");	
 	}
 	
 	@After
 	public void tearDown() throws Exception{
-//		//menu.click("Delete");
+		
+		//menu.click("Delete");
 		driver.close();
 	}
 

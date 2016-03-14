@@ -1,5 +1,7 @@
 package tests.fileActions;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,6 +43,9 @@ public class EmailFileTest {
 	@Test
 	public void testEmail() throws Exception {
 		menu.click("Send by email");
+		Thread.sleep(2000);
+		WebElement error = driver.findElement(By.cssSelector("td[class='footerError']"));
+		assertEquals("Message not sent",error.getText());
 	}
 	@After
 	public void tearDown() throws Exception{

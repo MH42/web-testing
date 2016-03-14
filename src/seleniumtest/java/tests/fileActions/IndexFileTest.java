@@ -1,5 +1,7 @@
 package tests.fileActions;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,10 +22,6 @@ public class IndexFileTest {
 	SwitchTabs tabs;
 	AddDocument add;
 	FileContextMenu menu;
-	WebElement file;
-	String sep = System.getProperty("file.separator");
-	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
-	
 	@Before
 	public void setUp() throws Exception{
 		driver = new FirefoxDriver(); 
@@ -41,9 +39,15 @@ public class IndexFileTest {
 	@Test
 	public void testIndex() throws Exception {
 		menu.click("Index");
+		Thread.sleep(1000);
+		WebElement indexed = driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"));
+		assertNotNull(indexed);
 	}
 	@After
 	public void tearDown() throws Exception{
+		menu.click("Mark unindexable");
+		Thread.sleep(1000);
+		menu.click("Mark indexable");
 		//menu.click("Delete");
 		driver.close();
 	}

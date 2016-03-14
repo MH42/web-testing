@@ -55,6 +55,7 @@ public class CheckoutFileTest {
 	
 	@After
 	public void tearDown() throws Exception{
+		Thread.sleep(1000);
 		menu.click("Checkin");
 		//menu.click("Delete");
 		driver.close();
