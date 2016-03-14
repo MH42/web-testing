@@ -16,9 +16,10 @@ public class DeleteDocumentTest {
 	
 	 @Before
 	 public void setUp() throws Exception {
+		 
+		 driver = new FirefoxDriver();
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
-		 driver = login.driver;	
 		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	 	  }
 

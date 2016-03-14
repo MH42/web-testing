@@ -1,4 +1,4 @@
-package tests;
+package tests.fileActions;
 
 import org.junit.After;
 import org.junit.Before;

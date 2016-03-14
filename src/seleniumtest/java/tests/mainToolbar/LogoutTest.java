@@ -1,4 +1,4 @@
-package tests;
+package tests.mainToolbar;
 import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;

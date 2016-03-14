@@ -1,4 +1,4 @@
-package tests;
+package tests.fileActions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
@@ -18,9 +19,10 @@ public class FilterTest {
 	
 	 @Before
 	 public void setUp() throws Exception {
+		 driver = new FirefoxDriver();	
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
-		 driver = login.driver;	
+
 		 switchtabs = new SwitchTabs(driver);
 		 switchtabs.switchTabs("Documents");	
 		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

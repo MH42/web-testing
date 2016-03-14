@@ -19,38 +19,110 @@ Eclipse-Project
 
 # file overview
 
+* PageObjects
+  * AddDocument - logs in and adds a new Document by uploading the intro.pdf
+  * AddFolder - adds a new Folder with the name "New folder"
+  * ConfirmationPopup - PageObject containing locators of yes and no button in confirmation popup
+  * CreateUser - Creates a new user with given Credentials
+  * DeleteDirectory
+  * DeleteDocument - logs in and deletes the document on top of the list
+  * DocumentToolbar - Pageobject containing locators of items of DocumentToolbar
+  * FileContextMenu - Pageobject containing locators of items in ContextMenu of a File
+  * FileDropDown - Pageobject containing locators of exit in File Dropdown Menu of Maintoolbar
+  * HelpDropdown -
+  * LockFile - uses context menu of first file to lock and unlock file
+  * LoginPage - PageObject, that enables loginAs(user,password)
+  * MainToolbar - PageObject containing locators of items in MainToolbar
+  * OS - gets OS type for OS specific variables and commands
+  * PersonalDropdown -
+  * PropertiesLoader
+  * RecoverLDState - sets LD state to a version backed-up  in a zip
+  * Statusbar
+  * SwitchTabs
+  * ToolDropdown
+  * UnzipUtility - unzips zips. Needed for RecoverLDState
 
-* AddDocument - logs in and adds a new Document by uploading the intro.pdf
-* DeleteDocument - logs in and deletes the document on top of the list
-* LanguageTest - tests, whether the right language is displayed when using ?locale=ID identifier in URL TODO: could be parameterized
-* LoginPage - PageObject, that enables loginAs(user,password)
-* LoginTest - Tests login with "admin" and "noadmin" TODO: could be parameterized
-* MainToolbar - PageObject containing locators of items in MainToolbar
-* ConfirmationPopup - PageObject containing locators of yes and no button in confirmation popup
-* DocumentToolbar - Pageobject containing locators of items of DocumentToolbar
-* FileContextMenu - Pageobject containing locators of items in ContextMenu of a File
-* FileDropDown - Pageobject containing locators of exit in File Dropdown Menu of Maintoolbar
-* NavigateTabsTest
-* RememberMeLogin - tests whether Credentials are saved when clicking "Remember Me"
-* TestDownloadDocument - uses document toolbar to select download first file
-* TestGalleryDocument - uses document toolbar to open gallery document view
-* TestListDocument - uses document toolbar to open list document view
-* TestRefreshDocument - uses document toolbar to refresh document view(becomes useful with Selenium Grid)
-* Logout - logs an logged in user out. (depends on successful login)
-* SearchTest - uses search input to search for "hello" example
-* TestDownloadFile - uses context menu of first file to open download popup
-* TestPreviewFile - uses context menu of first file to open preview popup
-* TestCutFile - uses context menu of first file to select cut action
-* TestCopyFile - uses context menu of first file to select copy action
-* TestDeleteFile - uses context menu of first file to delete file from database
-* TestBookmarkFile - uses context menu of first file to bookmark file
-* TestSendEmailFile - uses context menu of first file to open Email popup and fills its form
-* TestCheckoutFile - uses context menu of first file to checkout file and check it in again
-* TestLockFile - uses context menu of first file to lock and unlock file
-* TestIndexFile - uses context menu of first file to index it
-* TestMarkIndexFile - uses context menu of first file to mark it unidexable and indexable again
-* TestImmutableFile - uses context menu of first file to make it immutable
-* TestSignFile - uses context menu of first file to sign it
+
+* tests
+  * AddDocumentTest - tests the AddDocument method
+  * AddUserTest
+  * DeleteDocumentTest
+  * FileDropDownTest
+  * LanguageTest - tests, whether the right language is displayed when using ?locale=ID identifier in URL
+  * LanguageTestParameters - same as LanguageTest, tests 24 languages
+  * LoginTest - Tests login with "admin" and "noadmin"
+  * NavigateTabsTest
+  * RememberMeLogin - tests whether Credentials are saved when clicking "Remember Me"
+  * VerifyLogoTest - Verifies, whether the right logo is displayed
+  * VerifyTitleTest - Verifies, whether the right title is displayed
+
+* tests.DocumentToolbar
+  * DownloadDocument - uses document toolbar to select download first file
+  * GalleryDocument - uses document toolbar to open gallery document view
+  * ListDocument - uses document toolbar to open list document view
+  * RefreshDocument - uses document toolbar to refresh document view(becomes useful with Selenium Grid)
+
+* tests.fileActions
+  * BookmarkFile - uses context menu of first file to bookmark file
+  * ChangeLanguageFileTest
+  * CheckinFileTest
+  * CheckoutFile - uses context menu of first file to checkout file and check it in again
+  * CopyFile - uses context menu of first file to select copy action
+  * CutFile - uses context menu of first file to select cut action
+  * DeleteFile - uses context menu of first file to delete file from database
+  * DownloadFile - uses context menu of first file to open download popup
+  * EmailFileTest - uses context menu of first file to open Email popup and fills its form
+  * FilterTest - Filters filelist
+  * ImmutableFile - uses context menu of first file to make it immutable
+  * IndexFile - uses context menu of first file to index it
+  * LinkFileTest
+  * LockFileTest
+  * MarkIndexableFile - uses context menu of first file to mark it unidexable and indexable again
+  * MarkUnindexableFile
+  * PreviewFile - uses context menu of first file to open preview popup
+  * PrintDocumentTest
+  * SignFile - uses context menu of first file to sign it
+  * TagFileTest
+  * UnlockFileTest
+  * VoteFileTest - Votes a file
+
+* tests.Folder
+  * AddBookmarkTest
+  * AddFolderTest
+  * CopyFolderTest
+  * DeleteFolderTest
+  * ExportToZIPTest
+  * MoveFolderTest
+  * ReloadFolderTest
+  * RenameFolderTest
+
+* tests.MainToolbar
+  * Logout - logs an logged in user out. (depends on successful login)
+  * OpenBugReport
+  * OpenCredentials
+  * OpenDocumentation
+  * OpenForum
+  * SearchTest - uses search input to search for "hello" example
+
+* tests.personal
+  * AddContactTest
+  * ChangePassword
+  * ImportContactTest
+  * PrivateKeyTest
+  * ProfileTest
+  * RemoveCookiesTest
+  * SignatureTest
+
+
+* tests.tools
+  * ExportDropboxTest
+  * ImportDropboxTest
+  * RegistrationTest
+
+
+
+
+
 
 
 
