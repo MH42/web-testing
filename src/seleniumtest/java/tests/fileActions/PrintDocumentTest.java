@@ -17,6 +17,7 @@ public class PrintDocumentTest {
 	LoginPage login;
 	SwitchTabs tabs;
 	DocumentToolbar toolbar;
+	public String baseUrl = "http://localhost:8080";
 	
 	
 	@Before
@@ -30,7 +31,7 @@ public class PrintDocumentTest {
 	}
 	@Test
 	public void printDoc() throws Exception {
-		driver.findElements(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"))
+		driver.findElements(By.cssSelector("img[src='"+baseUrl+"/skin/images/indexed.png']"))
 			.get(0)
 			.click();
 		toolbar.click("Print");

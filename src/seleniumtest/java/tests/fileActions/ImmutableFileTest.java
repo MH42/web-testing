@@ -23,8 +23,10 @@ public class ImmutableFileTest {
 	AddDocument add;
 	FileContextMenu menu;
 	WebElement file;
+	
 	String sep = System.getProperty("file.separator");
 	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
+	public String baseUrl = "http://localhost:8080";
 	
 	@Before
 	public void setUp() throws Exception{
@@ -44,7 +46,7 @@ public class ImmutableFileTest {
 	public void testImmutable() throws Exception {
 		menu.click("Mark immutable");
 		Thread.sleep(1000);
-		assertNotNull(driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/stop.png']")));
+		assertNotNull(driver.findElement(By.cssSelector("img[src='" + "/skin/images/stop.png']")));
 	}
 	@After
 	public void tearDown() throws Exception{

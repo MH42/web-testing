@@ -65,8 +65,8 @@ Eclipse-Project
 
 * tests.fileActions
   * BookmarkFile - uses context menu of first file to bookmark file
-  * ChangeLanguageFileTest
-  * CheckinFileTest
+  * ChangeLanguageFileTest - uses file form to change its language to next language in options
+  * CheckinFileTest - uses context menu checks a file in 
   * CheckoutFile - uses context menu of first file to checkout file and check it in again
   * CopyFile - uses context menu of first file to select copy action
   * CutFile - uses context menu of first file to select cut action
@@ -84,7 +84,7 @@ Eclipse-Project
   * PrintDocumentTest
   * SignFile - uses context menu of first file to sign it
   * TagFileTest
-  * UnlockFileTest
+  * UnlockFileTest -
   * VoteFileTest - Votes a file
 
 * tests.Folder

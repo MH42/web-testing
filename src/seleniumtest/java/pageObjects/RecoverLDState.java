@@ -1,19 +1,19 @@
 package pageObjects;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pageObjects.OS.OS_TYPE;
 
 public class RecoverLDState {
-
-
-	@Test
+	
+	@BeforeClass
 	public void main() {
 
 		String sep = System.getProperty("file.separator");
 		String FilePath = System.getProperty("user.dir")+sep+"Documents";
 
-		String tomcatPath = "/LogicalDOC-Community/tomcat";
+		String tomcatPath = System.getProperty("catalina.home");
 		String zipFilePath = FilePath + "/logicaldoc.zip";
 		String delDirectory = FilePath + "/logicaldoc";
 		String destDirectory = FilePath + "/";

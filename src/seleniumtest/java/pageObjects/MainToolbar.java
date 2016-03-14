@@ -7,7 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MainToolbar {
+	
 	public  WebDriver driver;
+
+	public String baseUrl = "http://localhost:8080";
 	
 	public MainToolbar(WebDriver driver){
 		this.driver = driver;
@@ -40,7 +43,7 @@ public class MainToolbar {
 				.click();
 		}
 		else if (item == "Logout"){
-			driver.findElement(By.cssSelector("img[src*='http://localhost:8080/frontend/sc/skins/Simplicity/images/actions/close.png']"))
+			driver.findElement(By.cssSelector("img[src*='" + baseUrl + "/frontend/sc/skins/Simplicity/images/actions/close.png']"))
 				.click();
 		}
 		else {
@@ -52,6 +55,6 @@ public class MainToolbar {
 		WebElement searchInput = driver.findElement(By.name("isc_SearchBox_0"));
 		searchInput.clear();
 		searchInput.sendKeys(item);
-		driver.findElement(By.xpath("//img[contains(@src,'http://localhost:8080/frontend/sc/skins/Simplicity/images/pickers/search_picker.gif')]")).click();
+		driver.findElement(By.xpath("//img[contains(@src,'" + baseUrl + "/frontend/sc/skins/Simplicity/images/pickers/search_picker.gif')]")).click();
 	}	
 }

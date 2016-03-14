@@ -22,6 +22,9 @@ public class IndexFileTest {
 	SwitchTabs tabs;
 	AddDocument add;
 	FileContextMenu menu;
+
+	public String baseUrl = "http://localhost:8080";
+	
 	@Before
 	public void setUp() throws Exception{
 		driver = new FirefoxDriver(); 
@@ -40,7 +43,7 @@ public class IndexFileTest {
 	public void testIndex() throws Exception {
 		menu.click("Index");
 		Thread.sleep(1000);
-		WebElement indexed = driver.findElement(By.cssSelector("img[src='http://localhost:8080/skin/images/indexed.png']"));
+		WebElement indexed = driver.findElement(By.cssSelector("img[src='"+ baseUrl + "/skin/images/indexed.png']"));
 		assertNotNull(indexed);
 	}
 	@After

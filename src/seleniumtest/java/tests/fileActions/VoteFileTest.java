@@ -26,6 +26,7 @@ public class VoteFileTest {
 	WebElement file;
 	String sep = System.getProperty("file.separator");
 	String dir = System.getProperty("user.dir")+sep+"web-testing" +sep+"intro.pdf";
+	public String baseUrl = "http://localhost:8080";
 	
 	@Before
 	public void setUp() throws Exception{
@@ -44,7 +45,7 @@ public class VoteFileTest {
 	@Test
 	public void testDownload() throws Exception {
 		//Click on stars for voting
-		driver.findElement(By.cssSelector("img[src*='http://localhost:8080/skin/images/rating0.png']")).click();
+		driver.findElement(By.cssSelector("img[src*='"+baseUrl+"/skin/images/rating0.png']")).click();
 		
 		driver.findElement(By.id("isc_147")).sendKeys("3"); // Vote 1-5
 		
