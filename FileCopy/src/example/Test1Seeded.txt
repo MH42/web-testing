@@ -2,6 +2,8 @@ package example;
 
 public class Test1 {
 	public void m() {
+		// T1_MH_1 START
 		
+		// T1_MH_1 END
 	}
 }
