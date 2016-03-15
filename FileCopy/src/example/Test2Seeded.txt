@@ -4,6 +4,6 @@ public class Test2 {
 	public void m() {
 		// T2_MH_1 START
 		
-		// T1_MH_1 END
+		// T2_MH_1 END
 	}
 }
