@@ -47,8 +47,8 @@ Eclipse-Project
 * tests
   * AddDocumentTest - tests the AddDocument method
   * AddUserTest
-  * DeleteDocumentTest
-  * FileDropDownTest
+  * DeleteDocumentTest - deletes first file
+  * FileDropDownTest - opens file drop down menut
   * LanguageTest - tests, whether the right language is displayed when using ?locale=ID identifier in URL
   * LanguageTestParameters - same as LanguageTest, tests 24 languages
   * LoginTest - Tests login with "admin" and "noadmin"
@@ -76,15 +76,15 @@ Eclipse-Project
   * FilterTest - Filters filelist
   * ImmutableFile - uses context menu of first file to make it immutable
   * IndexFile - uses context menu of first file to index it
-  * LinkFileTest - uses context
+  * LinkFileTest - uses contextmenu to link a file
   * LockFileTest - uses contextmenu to lock file
   * MarkIndexableFile - uses context menu of first file to mark it unidexable and indexable again
-  * MarkUnindexableFile
+  * MarkUnindexableFile - uses context menu of first file to mark it unindexable
   * PreviewFile - uses context menu of first file to open preview popup
-  * PrintDocumentTest
+  * PrintDocumentTest - opens print document popup from document toolbar
   * SignFile - uses context menu of first file to sign it
-  * TagFileTest
-  * UnlockFileTest -
+  * TagFileTest - uses file form to create a tag for first file
+  * UnlockFileTest - uses contextmenu to unlock a previosly locked file
   * VoteFileTest - Votes a file
 
 * tests.Folder
@@ -106,19 +106,19 @@ Eclipse-Project
   * SearchTest - uses search input to search for "hello" example
 
 * tests.personal
-  * AddContactTest
-  * ChangePassword
-  * ImportContactTest
-  * PrivateKeyTest
-  * ProfileTest
-  * RemoveCookiesTest
-  * SignatureTest
+  * AddContactTest - adds a contact from personal dropdown menu
+  * ChangePassword - changes user password
+  * ImportContactTest - opens import contacts popup
+  * PrivateKeyTest - opens private key popup  ( no valid pem certificate could be created)
+  * ProfileTest - changes users profile 
+  * RemoveCookiesTest - clicks remove cookies in personal dropdown menu
+  * SignatureTest - opens signature popup( no valid pem certificate could be created)
 
 
 * tests.tools
-  * ExportDropboxTest
-  * ImportDropboxTest
-  * RegistrationTest
+  * ExportDropboxTest - opens export dropbox and trys to send an oauth key
+  * ImportDropboxTest - opens import dropbox and trys to send an oauth key
+  * RegistrationTest - opens registration popup and sends credentials 
 
 ## Errors seeded 
 ### Jan
