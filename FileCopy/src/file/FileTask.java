@@ -28,6 +28,7 @@ public class FileTask {
 		final String currentDir = System.getProperty("user.dir")+File.separator+"/src";
 		try {
 			for(String relativeSource : getFiles(fileList)) {
+				if(! relativeSource.startsWith("//")){
 				final File absoluteSource = new File(currentDir+File.separator+relativeSource+suffix+".txt");
 				System.out.println("Copying '"+absoluteSource+"' ...");
 				if(!absoluteSource.exists())
@@ -35,6 +36,7 @@ public class FileTask {
 				else {
 					Files.copy(absoluteSource.toPath(), new File(currentDir+File.separator+relativeSource+".java").toPath(), REPLACE_EXISTING);
 					System.out.println("DONE.");
+				}
 				}
 			}
 		} catch (IOException e) {
