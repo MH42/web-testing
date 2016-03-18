@@ -122,8 +122,13 @@ Eclipse-Project
 
 ## Errors seeded 
 ### Jan
-* com.logicaldoc.gui.frontend.client.security.SetPassword - sizevalidator removed
-* com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid - setdocuments if statement removed
+* com.logicaldoc.gui.frontend.client.security.SetPassword - pw_js_1 -sizevalidator removed 
+* com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid - dlg_js_1 setdocuments if statement removed
+* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts - cc_js_1 - selection.length==0 constraint removed from showcontext
+* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts - cc_js_2 - reducing selection range in showcontext method
+* com.logicaldoc.gui.frontend.client.clipboard.Clipboard - cp_js_1 - removing array index from for loop in getResults()
+* com.logicaldoc.gui.frontend.client.dashboard.Dashboard - dp_js_1 - setting all tab id s to tags in constructor
+* com.logicaldoc.gui.frontend.client.dashboard.MessageDialog - md_js_1 - removing form validation from onclick() 
 
 ### Johannes
 * com.logicaldoc.gui.common.client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
