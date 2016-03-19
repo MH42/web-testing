@@ -22,7 +22,7 @@ public class ReadXML {
 
 	public static void main(String argv[]) throws SAXException, IOException, ParserConfigurationException {
 
-		String file = "java20160319103312";
+		String file = "java20160319211121";
 		readXML(file);
 
 
