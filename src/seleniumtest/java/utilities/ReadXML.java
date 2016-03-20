@@ -22,7 +22,7 @@ public class ReadXML {
 
 	public static void main(String argv[]) throws SAXException, IOException, ParserConfigurationException {
 
-		String file = "java20160319211121";
+		String file = "ssl20160320151626";
 		readXML(file);
 
 
@@ -70,6 +70,7 @@ public class ReadXML {
 		}
 		writer.flush();
 		writer.close();
+		System.out.print("CSV successfully created");
 }	
 
 
