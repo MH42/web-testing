@@ -139,22 +139,26 @@ Eclipse-Project
 * com.logicaldoc.gui.frontend.client.panels.MainPanel 				// MP_JS_2 - selectionHandler changed to only check first observer
 
 ### Johannes
-* com.logicaldoc.gui.common.client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
-* com.logicaldoc.gui.common.client.menu/AboutDialog  // AD_JH_1 - Name of Logo File changed
-* com.logicaldoc.gui.common.client.menu/AboutDialog  // AD_JH_2 - changed "mailto" attribute to "mailfoo"
-* com.logicaldoc.gui.common.client.menu/MainMenu     // MM_JH_1 - removed logout functionality
-* com.logicaldoc.gui.common.client.menu/Registration // RT_JH_1 - set every parameter to email
-* com.logicaldoc.gui.common.client.menu/SearchBox    // SB_JH_1 - removed search method
+* com/logicaldoc/gui/common/client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
+* com/logicaldoc/gui/common/client/menu/AboutDialog  // AD_JH_1 - Name of Logo File changed
+												   // AD_JH_2 - changed "mailto" attribute to "mailfoo"
+* com/logicaldoc/gui/common/client/menu/MainMenu     // MM_JH_1 - removed logout functionality
+* com/logicaldoc/gui/common/client/menu/Registration // RT_JH_1 - set every parameter to email
+* com/logicaldoc/gui/common/client/menu/SearchBox    // SB_JH_1 - removed search method
 
-* com.logicaldoc.gui.common.client.log/Log 		   // LG_JH_1 - Hide all warning messages
-* com.logicaldoc.gui.common.client.log/EventsWindow  // EW_JH_1 - set default details for error messages
-* com.logicaldoc.gui.common.client.log/EventsPanel   // EP_JH_1 - swapped image for deletion
+* com/logicaldoc/gui/common/client/log/Log 		   // LG_JH_1 - Hide all warning messages
+* com/logicaldoc/gui/common/client/log/EventsWindow  // EW_JH_1 - set default details for error messages
+* com/logicaldoc/gui/common/client/log/EventsPanel   // EP_JH_1 - swapped image for deletion
 
-* com.logicaldoc.gui.common.client.administration/AdminMenu  // AM_JH_1 - removed securitySection
-* com.logicaldoc.gui.common.client.administration/AdminPanel // AP_JH_1 - always set content of Panel to null
+* com/logicaldoc/gui/common/client/administration/AdminMenu  			// AM_JH_1 - removed securitySection
+* #Error  com/logicaldoc/gui/common/client/administration/AdminPanel 	// AP_JH_1 - always set content of Panel to null
 
-* com.logicaldoc.gui.common.client.clipboard/Clipboard // CB_JH_1 - ignore all observers
-* com.logicaldoc.gui.common.client.clipboard/ClipboardWindow // CW_JH_1 - Set sizes to zero
+* #Error  com/logicaldoc/gui/common/client/clipboard/Clipboard 	// CB_JH_1 - ignore all observers 
+* com/logicaldoc/gui/common/client/clipboard/ClipboardWindow 		// CW_JH_1 - Set sizes to zero
+
+# use carefully * com/logicaldoc/gui/common/client/beans/GUISecuritySettings 		// forces SSL 
+
+* com/logicaldoc/gui/common/client/formatters/DataCellFormatter 	// DCF_JH_1 Start
 
 # ideas for tests
 
