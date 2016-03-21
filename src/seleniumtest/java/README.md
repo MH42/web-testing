@@ -122,13 +122,21 @@ Eclipse-Project
 
 ## Errors seeded 
 ### Jan
-* com.logicaldoc.gui.frontend.client.security.SetPassword - pw_js_1 -sizevalidator removed 
-* com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid - dlg_js_1 setdocuments if statement removed
-* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts - cc_js_1 - selection.length==0 constraint removed from showcontext
-* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts - cc_js_2 - reducing selection range in showcontext method
-* com.logicaldoc.gui.frontend.client.clipboard.Clipboard - cp_js_1 - removing array index from for loop in getResults()
-* com.logicaldoc.gui.frontend.client.dashboard.Dashboard - dp_js_1 - setting all tab id s to tags in constructor
-* com.logicaldoc.gui.frontend.client.dashboard.MessageDialog - md_js_1 - removing form validation from onclick() 
+* com.logicaldoc.gui.frontend.client.security.SetPassword           // PW_JS_1 -sizevalidator removed 
+* com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid // DLG_JS_1 setdocuments if statement removed
+* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts     // CC_JS_1 - selection.length==0 constraint removed from showcontext
+* com.logicaldoc.gui.frontend.client.personal.contacts.Contacts     // CC_JS_2 - reduced selection range in showcontext method
+* com.logicaldoc.gui.frontend.client.clipboard.Clipboard            // CP_JS_1 - removed array index from for loop in getResults()
+* com.logicaldoc.gui.frontend.client.dashboard.Dashboard            // DP_JS_1 - set all tab id s to tags in constructor
+* com.logicaldoc.gui.frontend.client.dashboard.MessageDialog        // MD_JS_1 - removed form validation from onclick() 
+* com.logicaldoc.gui.common.client.beans.GUIDocument                // GD_JS_1 - Rating always set to 3
+* com.logicaldoc.gui.common.client.beans.GUIInfo                    // GI_JS_1 - changed version to 7.44 added a c to all Strings containing Logicaldoc
+* com.logicaldoc.gui.common.client.beans.GUIUser                    // GU_JS_1 - getCheckedOutDocs() always returns 0
+* com.logicaldoc.gui.frontend.client.document.grid.ContextMenu      // CM_JS_1 - removed all items from setItems() in constructor method
+* com.logicaldoc.gui.frontend.client.personal.Profile               // PR_JS_1 - changed title of all textitems in constructor to "title"
+* com.logicaldoc.gui.frontend.client.reports.ReportsMenu            // RM_JS_1 - removed locked files panel
+* com.logicaldoc.gui.frontend.client.panels.MainPanel				// MP_JS_1 - set names of all tabs to documents in initGui method
+* com.logicaldoc.gui.frontend.client.panels.MainPanel 				// MP_JS_2 - selectionHandler changed to only check first observer
 
 ### Johannes
 * com.logicaldoc.gui.common.client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
