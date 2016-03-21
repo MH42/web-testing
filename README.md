@@ -1,5 +1,12 @@
 # web-testing
 
+## Setup for Selenium Tests
+* run localhost:8080/setup and fill forms
+* add one folder (left Sidebar)
+* add one file (Documentstab)
+* change password to "password" (Personal>Change Password)
+* run junit tests
+
 ## Problems:
 
 <ol>

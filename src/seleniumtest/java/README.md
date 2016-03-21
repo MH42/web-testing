@@ -139,7 +139,7 @@ Eclipse-Project
 * com.logicaldoc.gui.frontend.client.panels.MainPanel 				// MP_JS_2 - selectionHandler changed to only check first observer
 * com.logicaldoc.gui.frontend.client.clipboard.ClipBoard			// CP_JS_2 - removed all Hashset methods which were annotated with override, therefor using default methods of hashset superclass
 * com.logicaldoc.gui.common.client.beans.GUIDocument                // GD_JS_2 - removed override methods hash and equals to inherit methods from superclass
-
+* com.logicaldoc.gui.common.client.widgets.FolderTree				// FD_JS_1 - removed geticon method which will be inherited from superclass
 
 ### Johannes
 * com/logicaldoc/gui/common/client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
