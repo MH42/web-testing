@@ -66,7 +66,7 @@ Eclipse-Project
 * tests.fileActions
   * BookmarkFile - uses context menu of first file to bookmark file
   * ChangeLanguageFileTest - uses file form to change its language to next language in options
-  * CheckinFileTest - uses context menu checks a file in 
+  * CheckinFileTest - uses context menu checks a file in
   * CheckoutFile - uses context menu of first file to checkout file and check it in again
   * CopyFile - uses context menu of first file to select copy action
   * CutFile - uses context menu of first file to select cut action
@@ -110,7 +110,7 @@ Eclipse-Project
   * ChangePassword - changes user password
   * ImportContactTest - opens import contacts popup
   * PrivateKeyTest - opens private key popup  ( no valid pem certificate could be created)
-  * ProfileTest - changes users profile 
+  * ProfileTest - changes users profile
   * RemoveCookiesTest - clicks remove cookies in personal dropdown menu
   * SignatureTest - opens signature popup( no valid pem certificate could be created)
 
@@ -118,17 +118,17 @@ Eclipse-Project
 * tests.tools
   * ExportDropboxTest - opens export dropbox and trys to send an oauth key
   * ImportDropboxTest - opens import dropbox and trys to send an oauth key
-  * RegistrationTest - opens registration popup and sends credentials 
+  * RegistrationTest - opens registration popup and sends credentials
 
-## Errors seeded 
+## Errors seeded
 ### Jan
-* com.logicaldoc.gui.frontend.client.security.SetPassword           // PW_JS_1 -sizevalidator removed 
+* com.logicaldoc.gui.frontend.client.security.SetPassword           // PW_JS_1 -sizevalidator removed
 * com.logicaldoc.gui.frontend.client.document.grid.DocumentListGrid // DLG_JS_1 setdocuments if statement removed
 * com.logicaldoc.gui.frontend.client.personal.contacts.Contacts     // CC_JS_1 - selection.length==0 constraint removed from showcontext
 * com.logicaldoc.gui.frontend.client.personal.contacts.Contacts     // CC_JS_2 - reduced selection range in showcontext method
 * com.logicaldoc.gui.frontend.client.clipboard.Clipboard            // CP_JS_1 - removed array index from for loop in getResults()
 * com.logicaldoc.gui.frontend.client.dashboard.Dashboard            // DP_JS_1 - set all tab id s to tags in constructor
-* com.logicaldoc.gui.frontend.client.dashboard.MessageDialog        // MD_JS_1 - removed form validation from onclick() 
+* com.logicaldoc.gui.frontend.client.dashboard.MessageDialog        // MD_JS_1 - removed form validation from onclick()
 * com.logicaldoc.gui.common.client.beans.GUIDocument                // GD_JS_1 - Rating always set to 3
 * com.logicaldoc.gui.common.client.beans.GUIInfo                    // GI_JS_1 - changed version to 7.44 added a c to all Strings containing Logicaldoc
 * com.logicaldoc.gui.common.client.beans.GUIUser                    // GU_JS_1 - getCheckedOutDocs() always returns 0
@@ -151,12 +151,12 @@ Eclipse-Project
 * com/logicaldoc/gui/common/client/log/EventsPanel   // EP_JH_1 - swapped image for deletion
 
 * com/logicaldoc/gui/common/client/administration/AdminMenu  			// AM_JH_1 - removed securitySection
-* #Error  com/logicaldoc/gui/common/client/administration/AdminPanel 	// AP_JH_1 - always set content of Panel to null
+* Error  com/logicaldoc/gui/common/client/administration/AdminPanel 	// AP_JH_1 - always set content of Panel to null
 
-* #Error  com/logicaldoc/gui/common/client/clipboard/Clipboard 	// CB_JH_1 - ignore all observers 
+* Error  com/logicaldoc/gui/common/client/clipboard/Clipboard 	// CB_JH_1 - ignore all observers
 * com/logicaldoc/gui/common/client/clipboard/ClipboardWindow 		// CW_JH_1 - Set sizes to zero
 
-# use carefully * com/logicaldoc/gui/common/client/beans/GUISecuritySettings 		// forces SSL 
+* use carefully com/logicaldoc/gui/common/client/beans/GUISecuritySettings 		// forces SSL
 
 * com/logicaldoc/gui/common/client/formatters/DataCellFormatter 	// DCF_JH_1 Start
 
