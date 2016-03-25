@@ -142,26 +142,28 @@ Eclipse-Project
 * com.logicaldoc.gui.common.client.widgets.FolderTree				// FD_JS_1 - removed geticon method which will be inherited from superclass
 
 ### Johannes
-* com/logicaldoc/gui/common/client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
-* com/logicaldoc/gui/common/client/menu/AboutDialog  // AD_JH_1 - Name of Logo File changed
-												   // AD_JH_2 - changed "mailto" attribute to "mailfoo"
-* com/logicaldoc/gui/common/client/menu/MainMenu     // MM_JH_1 - removed logout functionality
-* com/logicaldoc/gui/common/client/menu/Registration // RT_JH_1 - set every parameter to email
-* com/logicaldoc/gui/common/client/menu/SearchBox    // SB_JH_1 - removed search method
-
-* com/logicaldoc/gui/common/client/log/Log 		   // LG_JH_1 - Hide all warning messages
-* com/logicaldoc/gui/common/client/log/EventsWindow  // EW_JH_1 - set default details for error messages
-* com/logicaldoc/gui/common/client/log/EventsPanel   // EP_JH_1 - swapped image for deletion
-
-* com/logicaldoc/gui/common/client/administration/AdminMenu  			// AM_JH_1 - removed securitySection
-* Error  com/logicaldoc/gui/common/client/administration/AdminPanel 	// AP_JH_1 - always set content of Panel to null
-
-* Error  com/logicaldoc/gui/common/client/clipboard/Clipboard 	// CB_JH_1 - ignore all observers
-* com/logicaldoc/gui/common/client/clipboard/ClipboardWindow 		// CW_JH_1 - Set sizes to zero
-
-* use carefully com/logicaldoc/gui/common/client/beans/GUISecuritySettings 		// forces SSL
-
-* com/logicaldoc/gui/common/client/formatters/DataCellFormatter 	// DCF_JH_1 Start
+* main/java/com/logicaldoc/gui/common/client/Menu              // ME_JH_1 - Swapped IDs of Documents and Dashboard
+* main/java/com/logicaldoc/gui/frontend/client/menu/AboutDialog  // AD_JH_1 - Name of Logo File changed
+												  	 // AD_JH_2 - changed 'mailto' attribute to 'mailfoo'
+* main/java/com/logicaldoc/gui/frontend/client/menu/MainMenu     // MM_JH_1 - removed logout functionality
+* main/java/com/logicaldoc/gui/frontend/client/menu/Registration // RT_JH_1 - set every parameter to email
+* main/java/com/logicaldoc/gui/frontend/client/menu/SearchBox    // SB_JH_1 - removed search method
+* main/java/com/logicaldoc/gui/common/client/log/Log 		   	 // LG_JH_1 - Hide all warning messages
+* main/java/com/logicaldoc/gui/common/client/log/EventsWindow  // EW_JH_1 - set default details for error messages
+* main/java/com/logicaldoc/gui/common/client/log/EventsPanel   // EP_JH_1 START - deleted Override
+* main/java/com/logicaldoc/gui/frontend/client/administration/AdminMenu  			// AM_JH_1 - removed securitySection
+* !Error  main/java/com/logicaldoc/gui/frontend/client/administration/AdminPanel 	// AP_JH_1 - always set content of Panel to null
+* !Error  main/java/com/logicaldoc/gui/common/client/clipboard/Clipboard 	// CB_JH_1 - ignore all observers 
+* main/java/com/logicaldoc/gui/common/client/clipboard/ClipboardWindow 		// CW_JH_1 - Set sizes to zero
+* !use carefully main/java/com/logicaldoc/gui/common/client/beans/GUISecuritySettings 		// forces SSL 
+* main/java/com/logicaldoc/gui/common/client/formatters/DateCellFormatter 	// DCF_JH_1 Start - never returns Short Format
+* main/java/com/logicaldoc/gui/common/client/formatters/DaysCellFormatter		// DCF_JH_1 START - sets all Days to 0
+* main/java/com/logicaldoc/gui/common/client/services/SecuritySettings 		// SS_JH_1 Start - makes it impossible to change passwords
+* main/java/com/logicaldoc/gui/common/client/i18n/I18N // i18N_JH_1 START - always set language to German	
+* main/java/com/logicaldoc/gui/common/client/util/ItemFactory // IFS_JH_1 Start - Removed Ability to filter problematic chars
+* main/java/com/logicaldoc/gui/common/client/util/LD		// LD_JH_1 Start - Removed "yes" Button
+* main/java/com/logicaldoc/gui/common/client/util/RequestInfo 	// RI_JH_1 Start - always return empty string
+* main/java/com/logicaldoc/gui/common/client/util/Util 		// UT_JH_1 Start - Always return true for isPreviewable
 
 # ideas for tests
 
@@ -169,7 +171,7 @@ caption:
 
 :+1: := Test exists and runs without errors (pray to the mighty xpath for his goodwill)
 
-* := Test exists, but needs to be fixed
+* := Test exists, but not very stable
 
 :warning: := To be created
 
