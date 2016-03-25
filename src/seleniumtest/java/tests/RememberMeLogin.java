@@ -4,9 +4,9 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import pageObjects.OS;
-import pageObjects.OS.OS_TYPE;
 import tests.mainToolbar.LogoutTest;
+import utilities.OS;
+import utilities.OS.OS_TYPE;
 
 public class RememberMeLogin {
 	public WebDriver driver;
