@@ -1,15 +1,17 @@
-package tests.Folder;
+package tests.folder;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import pageObjects.AddDocument;
 import pageObjects.AddFolder;
 import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class MoveFolderTest {
+public class AddFolderTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
@@ -29,9 +31,8 @@ public class MoveFolderTest {
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
 
-		folder = // driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
-	
-		driver.findElement(By.xpath("div[eventproxy='isc_FolderNavigator']/div/table[1]/tbody[2]/tr[1]/td/div/table/tbody/tr/td[3]"));
+		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
+
 
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
@@ -39,15 +40,10 @@ public class MoveFolderTest {
 	}
 
 	@Test
-	public void renameFolder() throws Exception {	
+	public void addFolder() throws Exception {	
 
-		menu.click("Rename");
-//		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_DynamicForm')]/div/form/table/tbody/tr[1]/td/input")).sendKeys("Renamed Folder"); 
-		driver.findElement(By.id("isc_W3")).sendKeys("Renamde Folder");
-		driver.findElement(By.id("isc_W6")).click();
-		
-		//confirm
-
+			menu.click("New folder");
+			driver.findElement(By.cssSelector("td[onfocus*='isc_SubmitItem']")).click();
 
 
 	}

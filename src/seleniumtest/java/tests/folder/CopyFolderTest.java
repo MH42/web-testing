@@ -1,4 +1,4 @@
-package tests.Folder;
+package tests.folder;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;

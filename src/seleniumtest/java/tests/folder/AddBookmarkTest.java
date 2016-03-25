@@ -1,19 +1,18 @@
-package tests.Folder;
+package tests.folder;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import pageObjects.AddFolder;
+
 import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class RenameFolderTest {
+public class AddBookmarkTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
-	public AddFolder add;
 	FolderContextMenu menu;
 	WebElement folder;
 	Actions actions;
@@ -29,8 +28,8 @@ public class RenameFolderTest {
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
 
-		folder = 
-				driver.findElement(By.xpath("div[eventproxy='isc_FolderNavigator']/div/table[1]/tbody[2]/tr[1]/td/div/table/tbody/tr/td[3]"));
+		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
+
 
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
@@ -38,19 +37,11 @@ public class RenameFolderTest {
 	}
 
 	@Test
-	public void renameFolder() throws Exception {	
+	public void addBookmark() throws Exception {	
 
-		menu.click("Move");
+		menu.click("Add bookmark");
 
-
-		driver.findElement(By.id("isc_12Yopen_icon_0")).click();
-		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_FolderTree')]"
-				+ "/div/table/tbody/tr[2]/td/div/table/tbody/tr/td[3]")).click();
-
-		driver.findElement(By.id("isc_12X")).click(); //confirm
-
-
-
+		// possible check: Bookmark existing?
 	}
 
 

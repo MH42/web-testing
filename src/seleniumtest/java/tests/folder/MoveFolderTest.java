@@ -1,4 +1,4 @@
-package tests.Folder;
+package tests.folder;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
@@ -9,7 +9,7 @@ import pageObjects.FolderContextMenu;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
 
-public class DeleteFolderTest {
+public class MoveFolderTest {
 	public LoginPage login;
 	public WebDriver driver;
 	public SwitchTabs switchtabs;
@@ -29,10 +29,9 @@ public class DeleteFolderTest {
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
 
-		folder = 
-				driver.findElement(By.xpath
-						("div[eventproxy='isc_FolderNavigator']"
-								+ "/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
+		folder = // driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr[2]/td/div/table/tbody/tr/td[3]"));
+	
+		driver.findElement(By.xpath("div[eventproxy='isc_FolderNavigator']/div/table[1]/tbody[2]/tr[1]/td/div/table/tbody/tr/td[3]"));
 
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
@@ -40,12 +39,17 @@ public class DeleteFolderTest {
 	}
 
 	@Test
-	public void deleteFolder() throws Exception {	
-		//menu.click("Delete");
-		//driver.findElements(By.xpath("//div[contains(@eventproxy,'isc_HistoryPanel')]/div")).get(0).click();
-		driver.findElements
-		(By.xpath("//div[contains(@eventproxy,'isc_HistoryPanel')]/div"))
-		.get(0).click(); //confirm
+	public void renameFolder() throws Exception {	
+
+		menu.click("Rename");
+//		driver.findElement(By.xpath("//div[contains(@eventproxy,'isc_DynamicForm')]/div/form/table/tbody/tr[1]/td/input")).sendKeys("Renamed Folder"); 
+		driver.findElement(By.id("isc_W3")).sendKeys("Renamde Folder");
+		driver.findElement(By.id("isc_W6")).click();
+		
+		//confirm
+
+
+
 	}
 
 
