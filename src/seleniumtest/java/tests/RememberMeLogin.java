@@ -34,11 +34,10 @@ public class RememberMeLogin {
 		} else {
 			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 		}
-		
+
 		driver.get(baseUrl + "/frontend.jsp");
 		LogoutTest logout = new LogoutTest();
 		logout.logout();
-		
 		driver.findElement(By.id("isc_1M")).click();
 	}
 

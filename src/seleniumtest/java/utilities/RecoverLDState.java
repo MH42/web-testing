@@ -3,7 +3,6 @@ package utilities;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import pageObjects.DeleteDirectory;
 import utilities.OS.OS_TYPE;
 
 public class RecoverLDState {

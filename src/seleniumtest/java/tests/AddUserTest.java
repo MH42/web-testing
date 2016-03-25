@@ -27,10 +27,6 @@ public class AddUserTest {
 
 	@Test
 	public void addUserTest() throws Exception {		
-//		add = new CreateUser();
-//		add.register("user1", "x@y.z", "Usersens", "Smith", "password");
-		
-		
 		driver.findElement(By.id("isc_BD")).click(); // select Security
 
 	    driver.findElement(By.id("isc_BQ")).click(); // select Users
@@ -46,8 +42,7 @@ public class AddUserTest {
 	    driver.findElement(By.id("isc_I4")).clear();
 	    driver.findElement(By.id("isc_I4")).sendKeys("Smith");
 	    driver.findElement(By.cssSelector("td.pickListCellSelected > div")).click();
-	
-	
+	    
 //	    change password
 	    
 		driver.findElement(By.name("user1")).click();
@@ -67,8 +62,6 @@ public class AddUserTest {
 			fail(verificationErrorString);
 		}
 	}
-
-
 }
 
 

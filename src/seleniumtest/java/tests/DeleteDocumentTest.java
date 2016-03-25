@@ -15,8 +15,7 @@ public class DeleteDocumentTest {
 	public AddDocument add;
 	
 	 @Before
-	 public void setUp() throws Exception {
-		 
+	 public void setUp() throws Exception {		 
 		 driver = new FirefoxDriver();
 		 login = new LoginPage(driver);
 		 login.loginAdmin();

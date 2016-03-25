@@ -20,8 +20,7 @@ public class AddDocumentTest {
 		 login = new LoginPage(driver);
 		 login.loginAdmin();
 		 switchtabs = new SwitchTabs(driver);
-		 switchtabs.switchTabs("Documents");	
-//		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		 switchtabs.switchTabs("Documents");
 	 	  }
 
 		@Test
@@ -34,7 +33,6 @@ public class AddDocumentTest {
 
 		@After
 		public void tearDown(){
-
 			driver.quit();
 		}
 	}

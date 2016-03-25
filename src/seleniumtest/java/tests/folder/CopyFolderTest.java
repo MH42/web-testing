@@ -30,6 +30,7 @@ public class CopyFolderTest {
 		driver = login.driver;
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
+		// Set folder to first folder in Default
 		folder = driver.findElement(By.xpath
 				("/html/body/div[5]/div/div[4]/div[2]/div[3]/"
 						+ "div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
@@ -40,7 +41,6 @@ public class CopyFolderTest {
 
 	@Test
 	public void copyFolder() throws Exception {	
-
 		menu.click("Copy");
 		// Open Default
 		driver.findElement(By.xpath
@@ -55,9 +55,7 @@ public class CopyFolderTest {
 				("div[eventproxy='isc_IButton_6']"
 						+ "/div")).click();
 		// Click Yes - as Eventproxy also relies on ID, ID is taken directly
-		driver.findElement(By.id("isc_17W"));
-		
-		
+		driver.findElement(By.id("isc_17W"));	
 	}
 
 
@@ -67,4 +65,3 @@ public class CopyFolderTest {
 		driver.quit();
 	}
 }
-

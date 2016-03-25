@@ -27,21 +27,15 @@ public class AddBookmarkTest {
 		driver = login.driver;
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
-
+// Set folder to first folder in Default
 		folder = driver.findElement(By.xpath("/html/body/div[5]/div/div[4]/div[2]/div[3]/div[2]/div[2]/div/div/table[1]/tbody[2]/tr/td/div/table/tbody/tr/td[3]"));
-
-
 		menu = new FolderContextMenu(driver);
 		menu.setFolder(folder);
-
 	}
 
 	@Test
 	public void addBookmark() throws Exception {	
-
 		menu.click("Add bookmark");
-
-		// possible check: Bookmark existing?
 	}
 
 

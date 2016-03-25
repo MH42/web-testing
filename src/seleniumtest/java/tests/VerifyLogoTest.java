@@ -45,8 +45,6 @@ public class VerifyLogoTest {
 			return false;
 		}
 	}
-
-
 }
 
 

@@ -3,14 +3,10 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import static org.junit.Assert.*;
-
 import pageObjects.AddDocument;
 import pageObjects.LoginPage;
 import pageObjects.SwitchTabs;
-
-
 
 public class VerifyTitleTest {
 	public LoginPage login;
@@ -30,17 +26,15 @@ public class VerifyTitleTest {
 
 	@Test
 	public void testVerifyTitle() throws Exception {
-
 		login.loginAdmin();
-
-
+// Test on Login
 		try {
 			assertEquals("LogicalDOC Community 7.4", driver.getTitle());
 		} catch (Error e) {
 			verificationErrors.append(e.toString());
-		}
-		
+		}	
 		switchtabs.switchTabs("Documents");
+// Test after switching Tabs
 		try {
 			assertEquals("LogicalDOC Community 7.4", driver.getTitle());
 		} catch (Error e) {
@@ -58,5 +52,4 @@ public class VerifyTitleTest {
 			fail(verificationErrorString);
 		}
 	}
-
 }

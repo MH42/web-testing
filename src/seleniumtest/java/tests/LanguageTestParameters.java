@@ -17,7 +17,6 @@ public class LanguageTestParameters {
 	public WebDriver driver = new FirefoxDriver();
 	public String baseUrl = "http://localhost:8080";
 	
-
 	public String languageTest(String langCode) throws Exception {
 		driver.get(baseUrl + "/frontend.jsp?locale=" + langCode);
 		String testString = driver.findElement(By.className("login-label")).getText();
@@ -45,10 +44,8 @@ public class LanguageTestParameters {
 
 	@Test
 	public void languageTestPar() throws Exception {
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
-		Assert.assertEquals(Expected, languageTest(Input));
-		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
+		Assert.assertEquals(Expected, languageTest(Input));	
 	}
 
 	@After

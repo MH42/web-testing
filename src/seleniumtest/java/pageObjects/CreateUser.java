@@ -1,7 +1,6 @@
 package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import tests.LoginTest;
 
@@ -13,9 +12,9 @@ public class CreateUser {
 
 	public void register(String username, String email, String name, String surname, String password) {
 		
-		// From Selenium
-		driver.findElement(By.cssSelector("td.buttonOver")).click();
-	    driver.findElement(By.cssSelector("td.toolbarButtonOver")).click();
+		// IDs from Selenium
+		driver.findElement(By.cssSelector("td.buttonOver")).click(); // Click Security
+	    driver.findElement(By.cssSelector("td.toolbarButtonOver")).click(); // Click Users
 	    driver.findElement(By.id("isc_HO")).clear();
 	    driver.findElement(By.id("isc_HO")).sendKeys(username);
 	    driver.findElement(By.id("isc_HR")).clear();
@@ -24,19 +23,10 @@ public class CreateUser {
 	    driver.findElement(By.id("isc_I1")).sendKeys(name);
 	    driver.findElement(By.id("isc_I4")).clear();
 	    driver.findElement(By.id("isc_I4")).sendKeys(surname);
-	    driver.findElement(By.cssSelector("td.pickListCellSelected > div")).click();
+	    driver.findElement(By.cssSelector("td.pickListCellSelected > div")).click(); // click Save
 	    
 		setPW("password", username);
-		
-//		driver.findElement(By.id("isc_B6")).click(); //click Security
-//		driver.findElement(By.id("isc_BJ")).click(); //click Users
-//		// Alternatively try	driver.findElement(By.name("Users")).click(); //click Users
-//		driver.findElement(By.id("isc_BU")).click(); //click Add User
-//		driver.findElement(By.id("isc_EO")).sendKeys(username);
-//		driver.findElement(By.id("isc_ER")).sendKeys(email);
-//		driver.findElement(By.id("isc_F1")).sendKeys(name);
-//		driver.findElement(By.id("isc_F4")).sendKeys(surname);
-//		driver.findElement(By.id("isc_GX")).click(); //save credentials
+
 		
 	}
 

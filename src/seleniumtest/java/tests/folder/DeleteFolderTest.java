@@ -18,7 +18,6 @@ public class DeleteFolderTest {
 	WebElement folder;
 	Actions actions;
 
-
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
@@ -28,7 +27,7 @@ public class DeleteFolderTest {
 		driver = login.driver;
 		switchtabs = new SwitchTabs(driver);
 		switchtabs.switchTabs("Documents");	
-
+		// Set folder to first folder in Default
 		folder = 
 				driver.findElement(By.xpath
 						("div[eventproxy='isc_FolderNavigator']"
@@ -55,5 +54,3 @@ public class DeleteFolderTest {
 		driver.quit();
 	}
 }
-
-

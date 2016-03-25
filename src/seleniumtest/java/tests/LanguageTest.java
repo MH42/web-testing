@@ -15,23 +15,17 @@ public class LanguageTest {
 		baseUrl = "http://localhost:8080";
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-
 	}
 
 	public boolean languageTest(String langCode, String text) throws Exception {
 		driver.get(baseUrl + "/frontend.jsp?locale=" + langCode);
 		String testString = driver.findElement(By.className("login-label")).getText();
 		return (testString.equals(text));
-
 	}
-
-	// Could be parameterized
 
 	@Test
 	public void languageTest() throws Exception {
 		Assert.assertFalse(languageTest("de", "Login")); //fails
-		
 		Assert.assertTrue(languageTest("de", "Anmelden"));
 		Assert.assertTrue(languageTest("en", "Login"));
 		Assert.assertTrue(languageTest("en_US", "Login"));
@@ -56,7 +50,6 @@ public class LanguageTest {
 		Assert.assertTrue(languageTest("hr", "Prijava"));
 		Assert.assertTrue(languageTest("vi", "Đăng nhập"));
 		Assert.assertTrue(languageTest("iw", "התחברות"));
-
 	}
 
 	@After

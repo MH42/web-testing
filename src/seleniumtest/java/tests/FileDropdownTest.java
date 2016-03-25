@@ -1,14 +1,10 @@
 package tests;
-import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import pageObjects.ConfirmationPopup;
 import pageObjects.FileDropdown;
 import pageObjects.LoginPage;
@@ -34,9 +30,9 @@ public class FileDropdownTest {
 	public void logout() throws Exception {
 		main.click("File");
 		drop.click("Exit");
-		exit.click("No");
-		
+		exit.click("No");		
 	}
+	
 	@After
 	public void tearDown(){
 		driver.quit();

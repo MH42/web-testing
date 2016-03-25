@@ -21,10 +21,10 @@ public class LoginTest {
 
 	@Test
 	public void loginTest() throws Exception {
+		// Only one test can be run at a time
 //		Assert.assertFalse(login.loginAs("noAdmin", "noPassword"));
 		
 		Assert.assertTrue(login.loginAs("admin", "password"));
-		
 
 	}
 
