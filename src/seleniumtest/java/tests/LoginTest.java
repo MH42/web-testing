@@ -1,12 +1,9 @@
 package tests;
-
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import pageObjects.LoginPage;
-
 
 public class LoginTest {
 	public WebDriver driver;
@@ -22,12 +19,9 @@ public class LoginTest {
 	@Test
 	public void loginTest() throws Exception {
 		// Only one test can be run at a time
-//		Assert.assertFalse(login.loginAs("noAdmin", "noPassword"));
-		
+		//		Assert.assertFalse(login.loginAs("noAdmin", "noPassword"));	
 		Assert.assertTrue(login.loginAs("admin", "password"));
-
 	}
-
 
 	@After
 	public void tearDown(){

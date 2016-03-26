@@ -3,7 +3,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import tests.mainToolbar.LogoutTest;
 import utilities.OS;
 import utilities.OS.OS_TYPE;
@@ -22,28 +21,21 @@ public class RememberMeLogin {
 		driver.get(baseUrl + "/frontend.jsp");
 		driver.findElement(By.id("isc_V")).sendKeys(user);
 		driver.findElement(By.id("isc_Y")).sendKeys(user);
-		driver.findElement(By.id("isc_1F")).click(); // Select "Remember Me" option - the reason why loginAs is not used
-		driver.findElement(By.id("isc_1M")).click();
+		driver.findElement(By.id("isc_1F")).click(); // Select "Remember Me" option
+		driver.findElement(By.id("isc_1M")).click(); 
 	}
-
 	@Test
 	public void rememberMeLogin() throws Exception {
-		// Could be improved by using Class OS
 		if (OS.getOsType() == OS_TYPE.MAC){
 			driver. findElement(By.cssSelector("body")).sendKeys(Keys.COMMAND +"t");
 		} else {
-			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
-		}
-
+			driver. findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t"); }
 		driver.get(baseUrl + "/frontend.jsp");
 		LogoutTest logout = new LogoutTest();
 		logout.logout();
 		driver.findElement(By.id("isc_1M")).click();
 	}
-
 	@After
 	public void tearDown(){
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.quit();
-	}
-}
+	}}

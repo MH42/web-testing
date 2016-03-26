@@ -1,6 +1,6 @@
 package utilities;
 
-//FROM http://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
+//partly from http://www.mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 
 import java.io.File;
 import java.io.IOException;
@@ -24,8 +24,6 @@ public class ReadXML {
 
 		String file = "ssl20160320151626";
 		readXML(file);
-
-
 	}	
 
 	public static void readXML(String file) throws ParserConfigurationException, SAXException, IOException{	
@@ -47,9 +45,7 @@ public class ReadXML {
 			Node nNode = nList.item(i);
 
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
 				Element eElement = (Element) nNode;
-
 				writer.append(eElement.getAttribute("name"));
 				writer.append(',');
 				writer.append(eElement.getAttribute("time"));
@@ -65,16 +61,11 @@ public class ReadXML {
 				} else
 					writer.append("0");
 				writer.append('\n');
-
 			}
 		}
 		writer.flush();
 		writer.close();
 		System.out.print("CSV successfully created");
-}	
-
-
-
-
+	}	
 }
 
